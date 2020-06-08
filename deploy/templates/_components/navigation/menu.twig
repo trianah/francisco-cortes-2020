@@ -1,0 +1,29 @@
+{% import '/_macros/helpers' as h %}
+
+{% set menuLinks = menuLinks|default([]) %}
+
+<header class="header fixed top-0 left-0 w-full z-50" data-behaviour="Menu">
+	<div class="header__inner flex flex-wrap justify-between items-center relative">
+		<a class="header__logo inline-block" href="/" title="">
+			{{ h.svg('logo') }}
+		</a>
+
+		<button class="burger appearance-none -mr-1" type="button" data-menu-opener id="menu" data-target="#site-menu" aria-label="Menu">
+			<span class="burger__bar"></span>
+		</button>
+	</div>
+
+	{% if menuLinks|length %}
+	<div class="header__nav absolute top-0 h-screen" id="site-menu">
+		<ul class="header__nav-list flex flex-wrap flex-col items-start justify-center h-full overflow-hidden" id="menu-inner">
+			{% for link in menuLinks %}
+			<li class="header__nav-item">
+				<a href="{{ link.url }}" class="header__nav-link">
+					{{ link.text }}
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+	{% endif %}
+</header>

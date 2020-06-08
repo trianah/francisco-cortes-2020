@@ -1,0 +1,41 @@
+{% embed '/wrapper/_layout' %}
+
+{% block content %}
+
+{% set offices = [
+	{
+		name: 'Office name',
+		address: '5 Princes Buildings',
+		latitude: 51.4020012,
+		longitude: -2.3269355
+	},
+	{
+		name: 'Office name',
+		address: '5 Princes Buildings',
+		latitude: 51.4020012,
+		longitude: -2.3269355
+	}
+] %}
+
+<div class="page-wrap pt-3">
+	<div class="wrapper">
+		<h1 class="mb-1 md:mb-1-5">Contact us</h1>
+		
+		{% for office in offices %}
+		<div class="g-flex mb-1">
+			<div class="g-flex__col md:w-6/12 mb-1 md:mb-0">
+				{{ office.address|nl2br }}
+			</div>
+			<div class="g-flex__col md:w-6/12	">
+				{% include '/_components/content-blocks/office-map' with {
+					latitude: office.latitude,
+					longitude: office.longitude,
+				} %}
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+{% endblock %}
+{% endembed %}

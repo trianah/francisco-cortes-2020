@@ -1,0 +1,16 @@
+{% embed '/wrapper/_layout' %}
+
+{% block content %}
+
+{% set pg = craft.app.request.getParam('pg') %}
+
+{% paginate craft.entries({
+	section: 'team',
+	limit: 16
+}) as teamPagination, teamEntries %}
+
+<div class="wrapper">
+</div>
+
+{% endblock %}
+{% endembed %}

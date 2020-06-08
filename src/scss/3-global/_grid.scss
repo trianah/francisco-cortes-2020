@@ -1,0 +1,43 @@
+$columnCount: 12;
+
+.g-flex {
+  @apply -ml-2 flex flex-wrap justify-start;
+}
+
+.g-flex__col {
+  @apply pl-2 w-full;
+}
+
+.g-grid {
+  @apply flex flex-wrap justify-start;
+}
+
+@supports (display: grid) {
+  @responsive {
+    .g-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-column-gap: 2rem;
+    }
+
+    @for $i from 1 through 5 {
+      .g-grid__row-#{$i} {
+        grid-row: #{$i};
+      }
+    }
+
+    @for $i from 0 through $columnCount {
+      .g-grid__col-#{$i} {
+        grid-column: #{$i};
+      }
+    }
+
+    @for $i from 1 through $columnCount {
+      @for $j from 0 through $columnCount - 1 {
+        .g-grid__col-#{$j}-#{$i} {
+          grid-column: #{$j} / #{$i + 1};
+        }
+      }
+    }
+  }
+}

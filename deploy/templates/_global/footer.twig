@@ -1,0 +1,18 @@
+{% set footerLinks = footerLinks|default([]) %}
+
+<footer class="footer border-t border-grey py-1">
+	<div class="wrapper">
+		<div class="flex flex-wrap justify-between items-center">
+			{% if footerLinks|length %}
+			<ul class="flex -ml-1">
+				{% for link in footerLinks %}
+				<li>
+					<a class="block p-1" href="{{ link.url }}">{{ link.title }}</a>
+				</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+			<span class="ml-auto">&copy; {{ now|date('Y') }} {{ currentSite.name }}</span>
+		</div>
+	</div>
+</footer>

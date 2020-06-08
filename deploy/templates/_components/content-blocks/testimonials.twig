@@ -1,0 +1,13 @@
+
+{% set testimonial = testimonial|default(null) %}
+{% set citation = citation|default(null) %}
+
+{% if testimonial %}
+<div class="o-testimonial">
+	{{ testimonial|raw }}
+	
+	{% if citation %}
+	<div class="">{{ citation }}</div>
+	{% endif %}
+</div>
+{% endfor %}

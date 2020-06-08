@@ -1,0 +1,88 @@
+{# Input with label #}
+<div>
+  <label for="email" class="block text-sm font-medium leading-5 text-gray-700">Email</label>
+  <div class="mt-1 relative rounded-md shadow-sm">
+    <input id="email" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="you@example.com" />
+  </div>
+</div>
+
+{# Input with label and help text #}
+<div>
+  <label for="email" class="block text-sm font-medium leading-5 text-gray-700">Email</label>
+  <div class="mt-1 relative rounded-md shadow-sm">
+    <input id="email" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="you@example.com" />
+  </div>
+  <p class="mt-2 text-sm text-gray-500">Make your password short and easy to guess.</p>
+</div>
+
+{# Input with validation error #}
+<div>
+  <label for="email" class="block text-sm font-medium leading-5 text-gray-700">Email</label>
+  <div class="mt-1 relative rounded-md shadow-sm">
+    <input id="email" class="form-input block w-full pr-10 border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:shadow-outline-red sm:text-sm sm:leading-5" placeholder="you@example.com" value="adamwathan" />
+    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+      <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+      </svg>
+    </div>
+  </div>
+  <p class="mt-2 text-sm text-red-600">Your password must be less than 4 characters.</p>
+</div>
+
+{# Input with hidden label #}
+<div>
+  <label for="email" class="sr-only">Email</label>
+  <div class="relative rounded-md shadow-sm">
+    <input id="email" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="you@example.com" />
+  </div>
+</div>
+
+{# Input with hint #}
+<div>
+  <div class="flex justify-between">
+    <label for="email" class="block text-sm font-medium leading-5 text-gray-700">Email</label>
+    <span class="text-sm leading-5 text-gray-500">Optional</span>
+  </div>
+  <div class="mt-1 relative rounded-md shadow-sm">
+    <input id="email" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="you@example.com" />
+  </div>
+</div>
+
+{# Input with leading Icon #}
+<div>
+  <label for="email" class="block text-sm font-medium leading-5 text-gray-700">Email</label>
+  <div class="mt-1 relative rounded-md shadow-sm">
+    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+      <svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" clip-rule="evenodd"/>
+      </svg>
+    </div>
+    <input id="email" class="form-input block w-full pl-10 sm:text-sm sm:leading-5" placeholder="you@example.com" />
+  </div>
+</div>
+
+{# Input with trailing Icon #}
+<div>
+  <label for="account_number" class="block text-sm font-medium leading-5 text-gray-700">Account number</label>
+  <div class="mt-1 relative rounded-md shadow-sm">
+    <input id="account_number" class="form-input block w-full pr-10 sm:text-sm sm:leading-5" placeholder="000-00-0000" />
+    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+      <svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+      </svg>
+    </div>
+  </div>
+</div>
+
+{# Input with addon #}
+<div>
+  <label for="company_website" class="block text-sm font-medium leading-5 text-gray-700">
+    Company Website
+  </label>
+  <div class="mt-1 flex rounded-md shadow-sm">
+    <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+      http://
+    </span>
+    <input id="company_website" class="form-input flex-1 block w-full px-3 py-2 rounded-none rounded-r-md sm:text-sm sm:leading-5" placeholder="www.example.com" />
+  </div>
+</div>

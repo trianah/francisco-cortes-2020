@@ -1,0 +1,15 @@
+.c-carousel {
+  @apply relative block w-full;
+
+  // height: 0;
+
+  // .flickity-viewport {
+  // 	@apply absolute inset-0;
+  // }
+}
+
+.c-carousel__item {
+  @apply w-full;
+
+  height: 0;
+}

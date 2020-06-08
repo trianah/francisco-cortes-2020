@@ -1,0 +1,16 @@
+{# 
+	JS: behaviours/OfficeMap.js 
+	CSS: components/_office-map.scss
+#}
+
+{% set latitude = latitude|default('') %}
+{% set longitude = longitude|default('') %}
+
+<div 
+	class="c-office-map h-full w-full" 
+	data-map 
+	data-latitude="{{ latitude }}" 
+	data-longitude="{{ longitude }}" 
+	data-behaviour="OfficeMap" 
+	id="office-map">
+</div>

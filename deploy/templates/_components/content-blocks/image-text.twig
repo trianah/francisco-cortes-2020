@@ -1,0 +1,44 @@
+{% import '_macros/helpers' as h %}
+
+{% set heading = heading|default(null) %}
+{% set text = text|default(null) %}
+{% set image = image|default(null) %}
+{% set textPosition = textPosition|default('left') %}
+
+<div class="g-flex {{ textPosition == 'right' ? 'flex-row-reverse' }} flex-wrap items-center justify-between wrapper md:max-w-40em lg:max-w-unset md:mx-auto px-0">
+	<div class="g-flex__col flex flex-col justify-center w-full lg:w-6/12 p-1 md:px-0 lg:p-0 lg:px-1">
+		{% if heading %}
+		<h3 class="mb-1">{{ heading }}</h3>
+		{% endif %}
+
+		{% if text %}
+		<div class="font-light leading-normal mb-1">
+			{{ text|raw|nl2br }}
+		</div>
+		{% endif %}
+  </div>
+
+	{% if image %}
+	{% set image = getImage(image, [
+		{ width: 800 },
+		{ width: 400 }
+	]) %}
+	<div class="g-flex__col lg:w-5/12 xl:6-12 lg:px-1">
+		<picture class="relative w-full">
+			{% if image.webp %}
+			<source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="{{ image.webpSrcset }}" data-sizes="100vw" type="image/webp">
+			{% endif %}
+
+			<source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="{{ image.srcset }}" data-sizes="100vw" type="image/jpeg">
+
+			<img class="absolute inset-0 w-full h-full object-cover lazyload" src="{{ image.placeholder }}" data-src="{{ image.src }}" alt="{{ image.alt }}" width="{{ image.width }}" height="{{ image.height }}">
+
+			<noscript>
+				<img class="absolute inset-0 w-full h-full object-cover" src="{{ image.src }}" alt="" width="{{ image.width }}" height="{{ image.height }}">
+			</noscript>
+		</picture>
+	</div>
+	{% endif %}
+</div>
+
+

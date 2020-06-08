@@ -1,0 +1,67 @@
+// PAGE TRANSITIONS
+// transition active state (same for leave and enter)
+.barba-leave-active,
+.barba-enter-active {
+  transition: opacity 450ms ease;
+}
+
+/* initial state */
+.barba-leave {
+  opacity: 1;
+}
+
+.barba-enter {
+  opacity: 0;
+}
+
+/* ending state */
+.barba-leave-to {
+  opacity: 0;
+}
+
+.barba-enter-to {
+  opacity: 1;
+}
+
+/* appear: active state, define the transition */
+.barba-appear-active {
+  transition: opacity 450ms ease;
+}
+
+/* appear: initial state */
+.barba-appear {
+  opacity: 0;
+}
+
+/* appear: ending state */
+.barba-appear-to {
+  opacity: 1;
+}
+
+[data-animate="fadeIn"] {
+  opacity: 0;
+
+  &.is-animated {
+    animation: fadeIn 500ms forwards;
+  }
+}
+
+[data-animate="fadeOut"] {
+  opacity: 1;
+
+  &.is-animated {
+    animation: fadeOut 500ms forwards;
+  }
+}
+
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,82 @@
+{% set preheader = preheader|default('') %}
+{% set header = header|default('') %}
+{% set subheader = subheader|default('') %}
+{% set body = body|default('') %}
+{% set primaryButton = primaryButton|default(null) %}
+{% set secondaryButton = secondaryButton|default(null) %}
+{% set image = image|default(null) %}
+
+<div class="relative bg-gray-800">
+	{% if image %}
+		{% set image =
+			getImage(
+				image,
+				[
+					{
+						width: 1920
+					}
+				]
+			)
+		%}
+		<div class="h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
+			<img class="w-full h-full object-cover lazyload"
+				src="{{ image.placeholder }}"
+				data-src="{{ image.src }}"
+				data-srcset="{{ image.srcset }}"
+				data-sizes="auto"
+				alt="{{ image.alt }}"
+				width="{{ image.width }}"
+				height="{{ image.height }}" />
+		</div>
+	{% endif %}
+	<div class="relative max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+		<div class="md:ml-auto md:w-1/2 md:pl-10">
+			{% if preheader|length %}
+				<div class="text-base leading-6 font-semibold uppercase tracking-wider text-gray-300">
+					{{ preheader }}
+				</div>
+			{% endif %}
+			{% if header|length %}
+				<h2 class="mt-2 text-white text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl sm:leading-10">
+					{{ header }}
+					{% if subheader %}
+						<br />
+						<span class="text-indigo-600">{{ subheader|nl2br }}</span>
+					{% endif %}
+				</h2>
+			{% endif %}
+			{% if body|length %}
+				<p class="mt-3 text-lg leading-7 text-gray-300">
+					{{ body|raw }}
+				</p>
+			{% endif %}
+
+			{% if primaryButton or secondaryButton %}
+				<div class="mt-8 flex">
+					{% if primaryButton %}
+						<div class="inline-flex rounded-md shadow">
+							{% include '/__library/objects/buttons/button' with {
+								url: primaryButton.url,
+								text: primaryButton.text,
+								type: 'primary',
+								prefixIcon: null,
+								suffixIcon: null
+							} %}
+						</div>
+					{% endif %}
+					{% if secondaryButton %}
+						<div class="{{ primaryButton ? 'ml-3' }} inline-flex">
+							{% include '/__library/objects/buttons/button' with {
+								url: secondaryButton.url,
+								text: secondaryButton.text,
+								type: 'secondary',
+								prefixIcon: null,
+								suffixIcon: null
+							} %}
+						</div>
+					{% endif %}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</div>

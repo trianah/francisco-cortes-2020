@@ -1,0 +1,62 @@
+{% import '/_macros/helpers' as h %}
+
+{% set preheader = preheader|default('') %}
+{% set header = header|default('') %}
+{% set body = body|default('') %}
+{% set features = features|default([]) %}
+
+<div class="py-12 bg-white">
+	<div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="lg:text-center">
+			{% if preheader|length %}
+				<p class="text-base leading-6 text-indigo-600 font-semibold tracking-wide uppercase">
+					{{ preheader }}
+				</p>
+			{% endif %}
+			{% if header|length %}
+				<h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+					{{ header }}
+				</h3>
+			{% endif %}
+			{% if body|length %}
+				<div class="mt-4 max-w-2xl text-xl leading-7 text-gray-500 lg:mx-auto">
+					{{ body|raw }}
+				</div>
+			{% endif %}
+		</div>
+
+		<div class="mt-10">
+			<ul class="md:grid md:grid-cols-2 md:col-gap-8 md:row-gap-10">
+				{% for feature in features %}
+					{% set header = feature.header|default('') %}
+					{% set body = feature.body|default('') %}
+					{% set icon = feature.icon|default('') %}
+					<li class="{{ loop.index != 1 ? 'mt-10 md:mt-0' }}">
+						<div class="flex">
+							{% if icon|length %}
+								<div class="flex-shrink-0">
+									<div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+										{{ h.symbol(icon) }}
+									</div>
+								</div>
+							{% endif %}
+
+							<div class="{{ icon|length ? 'ml-4' }}">
+								{% if header|length %}
+									<h5 class="text-lg leading-6 font-medium text-gray-900">
+										{{ header }}
+									</h5>
+								{% endif %}
+								{% if body|length %}
+									<div class="mt-2 text-base leading-6 text-gray-500">
+										{{ body|raw }}
+									</div>
+								{% endif %}
+							</div>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>

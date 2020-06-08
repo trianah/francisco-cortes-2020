@@ -1,0 +1,52 @@
+/*
+  Media query debugger
+*/
+@import "1-base/mixins";
+@import "1-base/units";
+@import "1-base/debug";
+
+/*
+  Resets, and globals
+*/
+@tailwind base;
+
+/*
+  third party chuff
+*/
+@import "vendor/flickity/flickity";
+
+/*
+  [01] Base Styles
+  [02] Object patterns
+  [03] Global elements patterns
+  [04] Components patterns
+*/
+
+/*! purgecss start ignore */
+@import "1-base/svg-symbols";
+@import "1-base/base";
+@import "2-objects/**";
+@import "3-global/**";
+@import "4-components/**";
+@import "5-pages/**";
+
+/*! purgecss end ignore */
+
+/*
+  Tailwindcss
+  see tailwind.config.js
+  https://tailwindcss.com/docs/what-is-tailwind/
+  Utilities and functions
+*/
+
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Print styles
+*/
+
+/*! purgecss start ignore */
+@import "1-base/print";
+
+/*! purgecss end ignore */

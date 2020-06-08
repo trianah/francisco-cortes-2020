@@ -1,0 +1,41 @@
+{% embed '/wrapper/_layout' with {
+	header: false
+} %}
+
+{% set query = craft.entries(
+	{
+		section: 'news',
+		limit: null
+	}
+) %}
+
+{% set total = query.count() %}
+
+{% set prevEntry = entry.getPrev(query) ?? query.nth(total - 1) ?? null %}
+{% set nextEntry = entry.getNext(query) ?? query.one() ?? null %}
+
+{% block meta %}
+{# SEO-friendly pagination links #}
+{% if prevEntry %}<link rel="prev" href="{{ prevEntry.url }}">{% endif %}
+{% if nextEntry %}<link rel="next" href="{{ nextEntry.url }}">{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<section>
+	<div class="wrapper">
+		{{ entry.title }}
+
+		{{ entry.body|raw }}
+	</div>
+</section>
+
+{# Pagination #}
+{% include '/_components/pagination' with {
+	pagination: {
+		prevUrl: prevEntry ? prevEntry.url,
+		nextUrl: nextEntry ? nextEntry.url
+	}
+} %}
+
+{% endblock %}

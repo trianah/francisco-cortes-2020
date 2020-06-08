@@ -1,0 +1,64 @@
+{% set block = block|default(null) %}
+
+{% if block %}
+	{% switch block.type %}
+
+		{# Rich Text #}
+		{% case 'text' %}
+		{% include '/_components/content-blocks/rich-text' with {
+			body: block.body
+		} %}
+
+		{# image / text #}
+		{% case 'imageText' %}
+		<div class="lg:px-2-5">
+			<div class="mx-auto lg:max-w-1240px">
+				{% include '/_components/content-blocks/image-text' with {
+					heading: block.heading,
+					body: block.body,
+					image: block.image[0]|default(null),
+					textPosition: block.textPosition.value
+				} %}
+			</div>
+		</div>
+
+		{# Quote #}
+		{% case 'quote' %}
+		<div class="px-1 md:px-2-5">
+			{% include '/_components/content-blocks/quote' with {
+				quote: block.quote,
+				name: block.name,
+				company: block.companyClient
+			} %}
+		</div>
+
+		{# Single Image #}
+		{% case 'imageBlock' %}
+		<div class="mx-auto max-w-1470px">
+			{% include '/_components/content-blocks/image' with {
+				image: block.image[0]|default(null),
+				caption: block.caption
+			} %}
+		</div>
+
+		{# Image Carousel #}
+		{% case 'imageBlock' %}
+		<div class="mx-auto max-w-1470px">
+			{% include '/_components/content-blocks/image' with {
+				images: block.images.all(),
+				caption: block.caption
+			} %}
+		</div>
+
+		{# Video #}
+		{% case 'video' %}
+		<div class="px-1 md:px-2-5">
+			<div class="mx-auto max-w-40em">
+				{% include '/_components/content-blocks/video' with {
+					video: block.video[0],
+				} %}
+			</div>
+		</div>
+		
+	{% endswitch %}
+{% endif %}

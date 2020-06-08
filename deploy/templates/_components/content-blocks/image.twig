@@ -1,0 +1,30 @@
+{% import '/_macros/helpers' as h %}
+
+{% set image = image|default(null) %}
+{% set caption = caption|default(null) %}
+
+{% if image %}
+<figure>
+	{% set image = getImage(image, {
+		width: 800,
+		height: 450
+	}) %}
+	<picture class="relative w-full">
+		{% if image.webp %}
+		<source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="{{ image.webpSrcset }}" data-sizes="100vw" type="image/webp">
+		{% endif %}
+
+		<source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="{{ image.srcset }}" data-sizes="100vw" type="image/jpeg">
+
+		<img class="absolute inset-0 w-full h-full object-cover lazyload" src="{{ image.placeholder }}" data-src="{{ image.src }}" alt="{{ image.alt }}" width="{{ image.width }}" height="{{ image.height }}">
+
+		<noscript>
+			<img class="absolute inset-0 w-full h-full object-cover" src="{{ image.src }}" alt="" width="{{ image.width }}" height="{{ image.height }}">
+		</noscript>
+	</picture>
+
+	{% if caption %}
+	<figcaption class="text-sm p-0-5 text-center">{{ caption }}</figcaption>
+	{% endif %}
+</figure>
+{% endif %}

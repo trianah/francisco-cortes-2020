@@ -1,0 +1,72 @@
+{% embed '/wrapper/_layout' %}
+	{% block content %}
+		{% include '/__library/components/heros/text-centered' with {
+			headline: 'Data to enrich your ',
+			highlightedText: 'online business',
+			paragraph: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.',
+			primaryButton: {
+				url: '#0',
+				text: 'Read more'
+			},
+			secondaryButton: {
+				url: '#1',
+				text: 'Read more'
+			}
+		} %}
+
+		<div class="wrapper">
+			<div class="g-flex">
+				<div class="w-6/12">
+					<form>
+						{% include '/__library/objects/form-inputs/input' with {
+							label: 'Label',
+							placeholder: 'placeholder',
+							hint: 'Optional',
+							helpText: 'This is some help text',
+							error: false
+						} %}
+
+						{% include '/__library/objects/form-inputs/input-w-addons' with {
+							label: 'Label',
+							placeholder: 'placeholder',
+							hint: 'Optional',
+							helpText: 'This is some help text',
+							error: false,
+							buttonText: 'Send',
+							leading: 'https://',
+							trailing: '£'
+						} %}
+
+						{% include '/__library/objects/form-inputs/input-w-button' with {
+							label: 'Label',
+							placeholder: 'placeholder',
+							hint: 'Optional',
+							helpText: 'This is some help text',
+							error: false,
+							errorText: 'There was an error',
+							buttonText: 'Send'
+						} %}
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="grid pt-5">
+			<div class="grid__col grid__col-1-4">
+				Col 1-4
+			</div>
+			<div class="grid__col">
+				Col 2
+			</div>
+			<div class="grid__col">
+				Col 3
+			</div>
+			<div class="grid__col">
+				Col 4
+			</div>
+			<div class="grid__col grid__col-1-12">
+				Col 1-12
+			</div>
+		</div>
+	{% endblock %}
+{% endembed %}

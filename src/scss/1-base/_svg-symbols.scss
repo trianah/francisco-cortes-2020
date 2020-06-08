@@ -1,0 +1,34 @@
+/* stylelint-disable */
+
+.icon {
+  position: relative;
+  display: block;
+  max-width: 100%;
+
+  > svg {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    display: block;
+    fill: currentColor;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    height: 0;
+    width: auto;
+  }
+}
+
+.icon--logo {
+  width: rem(59.763px);
+  &:after {
+    padding-bottom: 86.4406779661017%;
+  }
+}
+
+$icon--logo-width: 59px;
+$icon--logo-height: 51px;
+$icon--logo-ratio: 0.864406779661017;

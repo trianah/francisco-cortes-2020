@@ -1,0 +1,24 @@
+{% import '_macros/helpers' as h %}
+
+{% set title = title|default(null) %}
+{% set text = text|default(null) %}
+{% set image = image|default(null) %}
+
+<div class="text-left-image-right flex flex-row flex-wrap align-content-stretch justify-between wrapper  md:w-9/12 px-0 lg:px-1 md:py-2">
+   <div class="flex flex-col justify-center w-full lg:w-5/12 p-1 lg:p-0 lg:my-2">
+      {% if title  %}
+         <div>
+            <h3 class="inline">{{ title }}</h3>
+            {{ h.symbol('ui-dot', 'text-red inline-block') }}
+         </div>
+      {% endif %}
+
+      {% set paragraphs = text|split('\n') %}
+      {% for paragraph in paragraphs %}
+         <p class="font-light leading-loose text-sm">{{ paragraph }}</p>
+      {% endfor %}
+   </div>
+   <div class="w-full lg:w-6/12 lg:pl-1 pt-1">
+      {{ h.image(image) }}
+   </div>
+</div>

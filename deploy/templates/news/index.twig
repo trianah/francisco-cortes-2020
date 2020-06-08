@@ -1,0 +1,58 @@
+{% embed '/wrapper/_layout' %}
+
+{% block content %}
+
+{% set pg = craft.app.request.getParam('pg') %}
+
+{% paginate craft.entries({
+	section: 'news',
+	limit: pg and pg == 1 ? 9 : 16
+}) as newsPagination, newsEntries %}
+
+<div class="wrapper">
+	{# Are there news articles? #}
+	{% if newsEntries|length %}
+
+	{# If first page, do something different #}
+	{% for article in newsEntries[0] %}
+	{% include '/_components/news/listing-featured' with {
+		url: article.url,
+		previewTitle: article.previewTitle|length ? article.previewTitle : article.title,
+		previewText: article.previewText,
+		previewImage: image,
+		datePosted: article.postDate|date('jS M Y'),
+		author: null,
+		category: null
+	} %}
+	{% endfor %}
+
+	{# Layout news items #}
+	<div class="g-flex">
+		{% for article in newsEntries[1:] %}
+		{% set image = article.previewImage[0] ?? null %}
+
+		<div class="g-flex__col md:w-4/12 lg:w-3/12">
+			{% include '/_components/news/listing' with {
+				url: article.url,
+				previewTitle: article.previewTitle|length ? article.previewTitle : article.title,
+				previewText: article.previewText,
+				previewImage: image,
+				datePosted: article.postDate|date('jS M Y'),
+				author: null,
+				category: null
+			} %}
+		</div>
+		{% endfor %}
+	</div>
+
+	{# Pagination #}
+	{% include '/_components/pagination' with {
+		pagination: newsPagination
+	} %}
+
+	{% endif %}
+
+</div>
+
+{% endblock %}
+{% endembed %}

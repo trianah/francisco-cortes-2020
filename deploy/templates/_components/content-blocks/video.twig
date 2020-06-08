@@ -1,0 +1,11 @@
+{% set video = video|default(null) %}
+
+{% if video %}
+{% set video = getVideo(video, {
+	autoplay: false,
+	controls: true
+}) %}
+<div class="o-video-container">
+	{{ video.code|raw }}
+</div>
+{% endif %}

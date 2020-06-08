@@ -1,0 +1,37 @@
+{% set images = images|default([]) %}
+
+{% if images|length %}
+{# Use first image as height of carousel? #}
+{% set firstImage = getImage(images[0], [
+	{ width: 1600 },
+	{	width: 800 }
+], {
+	ratio: 1.7777777778
+}) %}
+<div class="c-carousel" data-behaviour="Carousel" id="carousel">
+	{% for image in images %}
+	{% set image = getImage(image, [
+		{ width: 1600 },
+		{ width: 800 }
+	],
+	{
+		ratio: 1.7777777778
+	}) %}
+	<div class="c-carousel__item" style="padding-bottom: {{ firstImage.height / firstImage.width * 100 }}%">
+		<picture class="absolute inset-0 w-full h-full">
+			{% if image.webp %}
+			<source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="{{ image.webpSrcset }}" data-sizes="100vw" type="image/webp">
+			{% endif %}
+
+			<source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="{{ image.srcset }}" data-sizes="100vw" type="image/jpeg">
+
+			<img class="absolute inset-0 w-full h-full object-cover lazyload" src="{{ image.placeholder }}" data-src="{{ image.src }}" alt="{{ image.alt }}" width="{{ image.width }}" height="{{ image.height }}">
+
+			<noscript>
+				<img class="absolute inset-0 w-full h-full object-cover" src="{{ image.src }}" alt="" width="{{ image.width }}" height="{{ image.height }}">
+			</noscript>
+		</picture>
+	</div>
+	{% endfor %}
+</div>
+{% endif %}

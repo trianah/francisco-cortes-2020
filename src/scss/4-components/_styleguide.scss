@@ -1,0 +1,9 @@
+.l-section + .l-section {
+  @apply mt-2 pt-1 border-t border-border;
+}
+
+.o-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}

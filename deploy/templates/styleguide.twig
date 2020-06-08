@@ -1,0 +1,199 @@
+{% embed '/wrapper/_layout' %}
+	{% block content %}
+		{# Heros #}
+
+		<div class="pt-14">
+			<div class="py-5 mb-10 border-b">
+				<div class="wrapper">
+					<h5 class="font-bold">
+						Hero
+					</h5>
+					<h6>
+						Text only. Centered.
+					</h6>
+				</div>
+				{% include '/__library/components/heros/text-centered' with {
+					headline: 'Data to enrich your ',
+					highlightedText: 'online business',
+					paragraph: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.',
+					primaryButton: {
+						url: '#0',
+						text: 'Read more'
+					},
+					secondaryButton: {
+						url: '#1',
+						text: 'Read more'
+					},
+					backgroundImage: null
+				} %}
+			</div>
+
+			<div class="py-5 mb-10 border-b">
+				<div class="wrapper">
+					<h5 class="font-bold">
+						CTA
+					</h5>
+				</div>
+				{% include '/__library/components/call-to-actions/simple-centered' with {
+					header: 'Data to enrich your lives!',
+					subheader: 'Take a look today.',
+					primaryButton: {
+						url: '#0',
+						text: 'Read more'
+					},
+					secondaryButton: {
+						url: '#1',
+						text: 'Read more'
+					}
+				} %}
+
+				{% include '/__library/components/call-to-actions/simple-justified' with {
+					header: 'Data to enrich your lives!',
+					subheader: 'Take a look today.',
+					primaryButton: {
+						url: '#0',
+						text: 'Read more'
+					},
+					secondaryButton: {
+						url: '#1',
+						text: 'Read more'
+					}
+				} %}
+
+				{% include '/__library/components/call-to-actions/simple-stacked' with {
+					header: 'Data to enrich your lives!',
+					subheader: 'Take a look today.',
+					primaryButton: {
+						url: '#0',
+						text: 'Read more'
+					},
+					secondaryButton: {
+						url: '#1',
+						text: 'Read more'
+					}
+				} %}
+
+				{% include '/__library/components/call-to-actions/split-w-image' with {
+					header: 'Data to enrich your lives!',
+					subheader: 'Take a look today.',
+					primaryButton: {
+						url: '#0',
+						text: 'Read more'
+					},
+					secondaryButton: {
+						url: '#1',
+						text: 'Read more'
+					},
+					image: fallbacks.image[0]
+				} %}
+			</div>
+
+			<div class="py-5 mb-10 border-b">
+				<div class="wrapper">
+					<h5 class="font-bold">
+						Feature Sections
+					</h5>
+				</div>
+				{% include '/__library/components/feature-sections/text-img' with {
+					header: 'Data to enrich your lives!',
+					body: 'Take a look today.',
+					features: [
+						{
+							header: 'Data to enrich your lives!',
+							body: 'Take a look today.',
+							icon: 'logo'
+						},
+						{
+							header: 'Data to enrich your lives!',
+							body: 'Take a look today.',
+							icon: 'logo'
+						},
+						{
+							header: 'Data to enrich your lives!',
+							body: 'Take a look today.',
+							icon: 'logo'
+						},
+						{
+							header: 'Data to enrich your lives!',
+							body: 'Take a look today.',
+							icon: 'logo'
+						}
+					]
+				} %}
+
+				{% include '/__library/components/feature-sections/3-col-text' with {
+					features: [
+						{
+							header: 'Data to enrich your lives!',
+							body: 'Take a look today.',
+							icon: 'logo'
+						},
+						{
+							header: 'Data to enrich your lives!',
+							body: 'Take a look today.',
+							icon: 'logo'
+						},
+						{
+							header: 'Data to enrich your lives!',
+							body: 'Take a look today.',
+							icon: 'logo'
+						},
+						{
+							header: 'Data to enrich your lives!',
+							body: 'Take a look today.',
+							icon: 'logo'
+						},
+						{
+							header: 'Data to enrich your lives!',
+							body: 'Take a look today.',
+							icon: 'logo'
+						},
+						{
+							header: 'Data to enrich your lives!',
+							body: 'Take a look today.',
+							icon: 'logo'
+						}
+					]
+				} %}
+
+				{% include '/__library/components/feature-sections/centered-2-col-text' with {
+					header: 'A better way to send money',
+					preheader: 'Transactions',
+					body: 'Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.',
+					features: [
+						{
+							header: 'Data to enrich your lives!',
+							body: 'Take a look today.',
+							icon: 'logo'
+						},
+						{
+							header: 'Data to enrich your lives!',
+							body: 'Take a look today.',
+							icon: 'logo'
+						},
+						{
+							header: 'Data to enrich your lives!',
+							body: 'Take a look today.',
+							icon: 'logo'
+						},
+						{
+							header: 'Data to enrich your lives!',
+							body: 'Take a look today.',
+							icon: 'logo'
+						},
+						{
+							header: 'Data to enrich your lives!',
+							body: 'Take a look today.',
+							icon: 'logo'
+						},
+						{
+							header: 'Data to enrich your lives!',
+							body: 'Take a look today.',
+							icon: 'logo'
+						}
+					]
+				} %}
+			</div>
+		</div>
+	{% endblock %}
+{% endembed %}

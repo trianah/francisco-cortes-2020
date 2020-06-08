@@ -1,0 +1,41 @@
+.g-header {
+  will-change: transform;
+}
+
+.g-header__inner {
+  @include calc-fluid("height", 76px, 90px);
+}
+
+.g-header__nav {
+  @apply overflow-y-auto;
+
+  height: calc(100 * var(--vh, 1vh));
+  transform: translate3d(100%, 0, 0);
+  transition: transform 200ms, opacity 200ms;
+
+  @screen md {
+    @apply overflow-hidden h-auto;
+
+    // transform: translate3d(0, 0, 0);
+    background: transparent;
+  }
+}
+
+.g-header__nav.is-open {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+/* Headroom classes */
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear;
+}
+
+.headroom--pinned {
+  transform: translateY(0%);
+}
+
+.headroom--unpinned {
+  transform: translateY(-100%);
+}

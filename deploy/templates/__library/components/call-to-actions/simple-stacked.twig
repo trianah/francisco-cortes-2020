@@ -1,0 +1,41 @@
+{% set header = header|default('') %}
+{% set subheader = subheader|default('') %}
+{% set primaryButton = primaryButton|default(null) %}
+{% set secondaryButton = secondaryButton|default(null) %}
+
+<div class="bg-white">
+	<div class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 md:py-16 lg:px-8 lg:py-20">
+		{% if header|length %}
+			<h2 class="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+				{{ header|nl2br }}
+				{% if subheader %}
+					<br />
+					<span class="text-indigo-600">{{ subheader|nl2br }}</span>
+				{% endif %}
+			</h2>
+		{% endif %}
+
+		{% if primaryButton or secondaryButton %}
+			<div class="mt-8 flex">
+				{% if primaryButton %}
+					<div class="inline-flex rounded-md shadow">
+						{% include '/__library/objects/buttons/button' with {
+							url: primaryButton.url,
+							text: primaryButton.text,
+							type: 'primary'
+						} %}
+					</div>
+				{% endif %}
+				{% if secondaryButton %}
+					<div class="{{ primaryButton ? 'ml-3' }} inline-flex">
+						{% include '/__library/objects/buttons/button' with {
+							url: secondaryButton.url,
+							text: secondaryButton.text,
+							type: 'secondary'
+						} %}
+					</div>
+				{% endif %}
+			</div>
+		{% endif %}
+	</div>
+</div>

@@ -1,0 +1,31 @@
+{% import '/_macros/helpers' as h %}
+
+{% set menuLinks = menuLinks|default([]) %}
+
+{# Header JS is instantiated in app.js, so no need for a data-behaviour #}
+<header class="g-header fixed top-0 left-0 w-full z-50">
+	<div class="g-header__inner flex flex-wrap justify-between items-center relative bg-blue px-1 z-50">
+		<a class="g-header__logo inline-block" href="/" title="">
+			{{ h.symbol('logo') }}
+			<span class="sr-only">{{ currentSite.name }}</span>
+		</a>
+
+		<button class="o-burger appearance-none -mr-1" type="button" data-menu-opener data-target="site-menu" aria-label="Menu">
+			<span class="o-burger__bar"></span>
+		</button>
+	</div>
+
+	{% if menuLinks|length %}
+	<div class="g-header__nav absolute top-0 left-0 w-full bg-blue text-white z-40" id="site-menu">
+		<ul class="g-header__nav-list flex flex-wrap flex-col items-start justify-start h-full overflow-hidden pt-5" id="menu-inner">
+			{% for link in menuLinks %}
+			<li class="g-header__nav-item">
+				<a href="{{ link.url }}" class="g-header__nav-link block px-1 py-0-5">
+					{{ link.text }}
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+	{% endif %}
+</header>

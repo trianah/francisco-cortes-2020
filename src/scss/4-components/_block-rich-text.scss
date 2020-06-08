@@ -1,0 +1,127 @@
+.c-rich-text {
+  * {
+    @apply my-0;
+  }
+
+  * + * {
+    @apply mt-1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @extend .h3;
+
+    line-height: 1.1;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+
+  a {
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  ol,
+  ul {
+    @apply ml-0;
+
+    li {
+      @apply pl-2 mt-0 mb-2;
+
+      @screen sm {
+        @apply pl-1;
+      }
+
+      @screen lg {
+        @apply mb-2;
+      }
+    }
+
+    &:last-child {
+      @apply mb-0;
+    }
+  }
+
+  ul {
+    padding-left: rem(20px);
+    //list-style-image: svg-load('bullet.svg', fill=#d52027);
+    list-style: circle;
+  }
+
+  ol {
+    padding-left: 0;
+    list-style-type: none;
+    counter-reset: counter;
+
+    li {
+      @apply relative;
+
+      padding-left: rem(20px) + 0.25rem;
+
+      @screen sm {
+        padding-left: rem(20px) + 1rem;
+      }
+
+      &::before {
+        @apply absolute top-0 left-0 text-black;
+
+        font-weight: 700;
+        counter-increment: counter;
+        content: counter(counter);
+      }
+    }
+  }
+
+  p + img {
+    @apply my-6;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  table {
+    margin: auto;
+    border-collapse: collapse;
+    overflow-x: scroll;
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+
+    @apply mt-1;
+  }
+
+  thead {
+    @apply bg-black text-white text-left;
+
+    th {
+      @apply px-1 py-2 border border-black;
+
+      font-weight: 700;
+    }
+  }
+
+  tbody {
+    @apply border border-black;
+  }
+
+  td {
+    @apply px-1 py-2;
+  }
+
+  tr:not(:last-child) td {
+    @apply border-b border-black;
+  }
+}

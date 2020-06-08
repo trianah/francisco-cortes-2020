@@ -1,0 +1,52 @@
+{% set link = link|default('#0') %}
+{% set image = image|default(null) %}
+{% set previewTitle = previewTitle|default('') %}
+{% set previewText = previewText|default('') %}
+{% set author = author|default(null) %}
+{% set category = category|default(null) %}
+
+<a class="c-listing-item" href="{{ link }}" title="{{ previewTitle }}">
+	{# Image #}
+	{% if image %}
+	{% set image = getImage(image, {
+		width: 800,
+		height: 450
+	}) %}
+	<picture class="c-listing-item__img-cont relative w-full">
+		{% if image.webp %}
+		<source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="{{ image.webpSrcset }}" data-sizes="100vw" type="image/webp">
+		{% endif %}
+
+		<source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="{{ image.srcset }}" data-sizes="100vw" type="image/jpeg">
+
+		<img class="object-cover lazyload" src="{{ image.placeholder }}" data-src="{{ image.src }}" alt="{{ image.alt }}" width="{{ image.width }}" height="{{ image.height }}">
+
+		<noscript>
+			<img class="" src="{{ image.src }}" alt="" width="{{ image.width }}" height="{{ image.height }}">
+		</noscript>
+	</picture>
+	{% endif %}
+
+	{# Author / Category #}
+	{% if author or category %}
+	<span class="c-news__listing-meta">
+		{% if author %}By {{ author.fullName }}{% endif %}
+		{% if category %}
+			{% if author %} | {% endif %}
+			<a href="{{ category.url }}">{{ category.title }}</a>
+		{% endif %}
+	</span>
+	{% endif %}
+
+	{# Title #}
+	<span class="c-news__listing-title h2">
+		{{ title }}
+	</span>
+
+	{# Text #}
+	{% if previewText|length %}
+	<span class="c-news__listing-desc">
+		{{ previewText|raw }}
+	</span>
+	{% endif %}
+</a>

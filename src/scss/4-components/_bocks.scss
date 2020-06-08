@@ -1,0 +1,14 @@
+.c-content-blocks-wrap {
+  .c-content-blocks-block + .c-content-blocks-block,
+  .c-content-blocks-block:first-child {
+    @apply mt-10;
+
+    @screen md {
+      @apply mt-12;
+    }
+
+    @screen xl {
+      @apply mt-20;
+    }
+  }
+}

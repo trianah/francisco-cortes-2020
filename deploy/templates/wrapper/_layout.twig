@@ -1,0 +1,116 @@
+{% import '/_macros/helpers' as h %}
+{# -- Prefetch & preconnect headers and links -- #}
+{# {% set prefetchUrls = [
+    alias("@assetsUrl"),
+] %} #}
+{# -- General global variables -- #}
+{# {% set baseUrl = alias('@assetsUrl') ~ '/' %}
+{% set gaTrackingId = getenv('GA_TRACKING_ID') %} #}
+<!DOCTYPE html>
+<!-- build:cms-->
+{% set stamp = "" %}
+<!-- endbuild-->
+<html lang="en-gb" dir="ltr" class="no-js">
+  <head>
+	  <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" viewport-fit="cover">
+		{# -- Prefetch & preconnect headers and links -- #}
+		{# {% set headerLink = "Link: " %}
+		{% for url in prefetchUrls %}
+				{% set headerLink = headerLink ~ "<#{url}>; rel=dns-prefetch;," %}
+				{% set headerLink = headerLink ~ "<#{url}>; rel=preconnect; crossorigin;" %}
+				{% if not loop.last %}
+						{% set headerLink = headerLink ~ "," %}
+				{% endif %}
+				<link rel="dns-prefetch" href="{{ url }}">
+				<link rel="preconnect" href="{{ url }}" crossorigin>
+		{% endfor %}
+		{% header headerLink %} #}
+
+		{% hook 'seo' %}
+
+		{# Robots blocking for staging URLs #}
+		{# {{ 'mudbank' in siteUrl ? '<meta name="robots" content="noindex, nofollow">' : '' }} #}
+		<meta name="msapplication-TileColor" content="#282929">
+		<meta name="theme-color" content="#282929">
+		<meta content="telephone=no" name="format-detection">
+	  <script>
+			document.documentElement.classList.remove('no-js');
+		</script>
+
+		<link rel="stylesheet" href="/dist/css/style{{ stamp }}.css">
+
+		{# <link rel="stylesheet" href="https://webfonts.fontstand.com/WF-000714-e7bc4594e698104b9057b4af9f7050e3.css" type="text/css"/> #}
+		<!-- inject:js -->
+		<script>loadjs=function(){var e=function(){},n={},t={},r={};function i(e,n){if(e){var i=r[e];if(t[e]=n,i)for(;i.length;)i[0](e,n),i.splice(0,1)}}function c(n,t){n.call&&(n={success:n}),t.length?(n.error||e)(t):(n.success||e)(n)}function s(n,t,r,i){var c,o,f=document,u=r.async,a=(r.numRetries||0)+1,l=r.before||e,h=n.replace(/^(css|img)!/,"");i=i||0,/(^css!|\.css$)/.test(n)?(c=!0,(o=f.createElement("link")).rel="stylesheet",o.href=h):/(^img!|\.(png|gif|jpg|svg)$)/.test(n)?(o=f.createElement("img")).src=h:((o=f.createElement("script")).src=n,o.async=void 0===u||u),!(o.onload=o.onerror=o.onbeforeload=function(e){var f=e.type[0];if(c&&"hideFocus"in o)try{o.sheet.cssText.length||(f="e")}catch(e){f="e"}if("e"==f&&(i+=1)<a)return s(n,t,r,i);t(n,f,e.defaultPrevented)})!==l(n,o)&&f.head.appendChild(o)}function o(e,t,r){var o,f;if(t&&t.trim&&(o=t),f=(o?r:t)||{},o){if(o in n)throw"LoadJS";n[o]=!0}!function(e,n,t){var r,u,a=(e=e.push?e:[e]).length,l=a,h=[];for(r=function(e,n,t){if("e"==n&&h.push(e),"b"==n){if(!t)return;h.push(e)}var r;--a||(c(f,r=h),i(o,r))},u=0;u<l;u++)s(e[u],r,t)}(e,0,f)}return o.ready=function(e,n){return function(e,i){var s,o,f,u=[],a=(e=e.push?e:[e]).length,l=a;for(s=function(e,t){t.length&&u.push(e),--l||c(n,u)};a--;)o=e[a],(f=t[o])?s(o,f):(r[o]=r[o]||[]).push(s)}(e),o},o.done=function(e){i(e,[])},o.reset=function(){n={},t={},r={}},o.isDefined=function(e){return e in n},o}();</script>
+		<!-- endinject -->
+		<script>
+			if(!window.HTMLPictureElement || !('sizes' in document.createElement('img'))){
+				document.createElement('picture');
+				loadjs("/dist/js/picturefill.min.js");
+			}
+			{# Place fonts inline [see below] #}
+		</script>
+		{% include '/_global/fonts' %}
+  </head>
+
+	<body>
+		{% set menuLinks = [
+			{
+				text: 'Home',
+				url: siteUrl
+			},
+			{
+				text: 'About Us',
+				url: siteUrl ~ 'about-us'
+			},
+			{
+				text: 'Team',
+				url: siteUrl ~ 'team'
+			},
+			{
+				text: 'News',
+				url: siteUrl ~ 'news'
+			},
+			{
+				text: 'Contact',
+				url: siteUrl ~ 'contact-us'
+			}
+		] %}
+		{% include '/_global/header' with {
+			menuLinks: menuLinks
+		} %}
+		<main id="page-wrapper" data-barba="wrapper">
+			<div id="page-container" data-barba="container" data-barba-namespace="home">
+				{% block content %}
+				{% endblock %}
+
+				{% include '/_objects/cp-edit' %}
+			</div>
+		</main>
+
+		{% include '/_global/modal' %}
+		
+		{% include '/_global/footer' with {
+			footerLinks: [
+				{
+					url: '#',
+					title: 'Terms & Conditions'
+				},
+				{
+					url: '#',
+					title: 'Privacy Policy'
+				}
+			]
+		} %}
+
+		{% include 'wrapper/_symbols' %}
+
+		<script>
+			loadjs([
+				'//polyfill.io/v3/polyfill.min.js?features=default%2CArray.from%2CArray.isArray%2CArray.prototype.filter%2CArray.prototype.find%2CArray.prototype.findIndex%2CArray.prototype.forEach%2CArray.prototype.includes%2CArray.prototype.indexOf%2CArray.prototype.keys%2CArray.prototype.map%2CArray.prototype.reduce%2CArray.prototype.values%2CCustomEvent%2CDocumentFragment%2CDocumentFragment.prototype.append%2CDocumentFragment.prototype.prepend%2CElement%2CElement.prototype.matches%2CElement.prototype.closest%2CElement.prototype.classList%2CMap%2CObject.create%2CObject.assign%2CObject.entries%2CObject.keys%2CObject.values%2CPromise%2CSet%2CSymbol%2CWeakSet%2CWeakMap%2CSymbol.hasInstance%2CSymbol.isConcatSpreadable%2CSymbol.match%2CSymbol.iterator%2CSymbol.replace%2CSymbol.search%2CSymbol.species%2CSymbol.split%2CSymbol.toPrimitive%2CSymbol.toStringTag%2CSymbol.unscopables%2CmatchMedia%2CIntersectionObserver',
+				'/dist/js/app.bundle{{ stamp }}.js'
+			], {async: false});
+		</script>
+  </body>
+</html>

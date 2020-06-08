@@ -1,0 +1,49 @@
+{% for block in contentBlocks %}
+	{% switch block.type %}
+		{% case 'text' %}
+		{{ block.body|raw }}
+
+		{% case 'images' %}
+		{% for image in block.images %}
+		{% set image = getImage(image, {
+			width: 800,
+			height: 450
+		}) %}
+		<picture class="relative w-full">
+			{% if image.webp %}
+			<source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="{{ image.webpSrcset }}" data-sizes="100vw" type="image/webp">
+			{% endif %}
+
+			<source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="{{ image.srcset }}" data-sizes="100vw" type="image/jpeg">
+
+			<img class="absolute inset-0 w-full h-full object-cover lazyload" src="{{ image.placeholder }}" data-src="{{ image.src }}" alt="{{ image.alt }}" width="{{ image.width }}" height="{{ image.height }}">
+
+			<noscript>
+				<img class="absolute inset-0 w-full h-full object-cover" src="{{ image.src }}" alt="" width="{{ image.width }}" height="{{ image.height }}">
+			</noscript>
+		</picture>
+		{% endfor %}
+
+		{% case 'video' %}
+		{% for video in block.video %}
+		{% set video = getVideo(video, {
+			autoplay: false,
+			controls: true
+		}) %}
+		<div class="o-video-container">
+			{{ video.code|raw }}
+		</div>
+		{% endfor %}
+
+		{% case 'quote' %}
+		<q>{{ block.quote }}</q>
+		<span>{{ block.citation }}</span>
+
+		{% case 'testimonials' %}
+		{% for testimonial in block.testimonials %}
+			{{ testimonial.body|raw }}
+		{% endfor %}
+
+		{% default %}
+	{% endswitch %}
+{% endfor %}

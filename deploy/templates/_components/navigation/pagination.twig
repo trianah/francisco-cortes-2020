@@ -1,0 +1,47 @@
+{% import '/_macros/helpers' as h %}
+
+{% set nearbyCount = nearbyCount|default(5) %}
+
+<ul class="c-pagination flex items-center justify-center mb-1-5">
+	<li class="c-pagination__item">
+		<a class="c-pagination__btn" href="{{ pagination.firstUrl }}">First</a>
+	</li>
+
+	<li class="c-pagination__item">
+		<a class="c-pagination__btn {{ not pagination.prevUrl|length ? 'is-disabled' }}" href="{{ pagination.prevUrl|length ? pagination.prevUrl : '#prev' }}">
+			{{ h.symbol('btn-prev') }}
+		</a>
+	</li>
+
+	{% for page, url in pagination.getPrevUrls(nearbyCount) %}
+	<li class="c-pagination__item">
+			<a class="c-pagination__link" href="{{ url }}">
+				<span>{{ page }}<span>
+			</a>
+	</li>
+	{% endfor %}
+
+	<li class="c-pagination__item">
+		<span class="c-pagination__link is-active">
+			<span>{{ pagination.currentPage }}</span>
+		</span>
+	</li>
+
+	{% for page, url in pagination.getNextUrls(nearbyCount) %}
+	<li class="c-pagination__item">
+		<a class="c-pagination__link" href="{{ url }}">
+			<span>{{ page }}<span>
+		</a>
+	</li>
+	{% endfor %}
+
+	<li class="c-pagination__item">
+		<a class="c-pagination__btn {{ not pagination.nextUrl|length ? 'is-disabled' }}" href="{{ pagination.nextUrl|length ? pagination.nextUrl : '#next' }}">
+			{{ h.symbol('btn-next') }}
+		</a>
+	</li>
+
+	<li class="c-pagination__item">
+		<a class="c-pagination__btn" href="{{ pagination.lastUrl }}">Last</a>
+	</li>
+</ul>

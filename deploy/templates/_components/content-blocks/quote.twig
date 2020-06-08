@@ -1,0 +1,13 @@
+{% set quote = quote|default(null) %}
+{% set citation = citation|default(null) %}
+
+{% if quote %}
+<div class="border-l-8 border-accent-1 pl-1 xl:pl-2 mb-0-25">
+	<q class="o-quote h5 leading-tightish">
+		{{ quote|raw }}
+	</q>
+	{% if citation %}
+	<span>{{ citation }}</span>
+	{% endif %}
+</div>
+{% endif %}

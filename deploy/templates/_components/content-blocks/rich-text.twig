@@ -1,0 +1,16 @@
+{#
+p
+h1, h2, etc
+ol
+ul
+img
+a
+#}
+{% set richText = richText|default(null) %}
+
+{% if richText %}
+  <div class="o-wysiwyg max-w-40em">
+    {{ richText|raw }}
+  </div>
+{% endif %}
+
