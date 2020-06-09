@@ -1,0 +1,11 @@
+# config/*
+# node_modules/*
+# private/*
+# scripts/*
+# src/*
+# static
+
+# git
+# .gitignore
+# .git-ftp-ignore
+# README.md
