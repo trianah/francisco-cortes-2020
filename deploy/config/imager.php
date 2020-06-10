@@ -73,17 +73,17 @@ return [
 	*/
 	'storages' => [],
 	'storageConfig' => [
-    'aws'  => [
-			'accessKey' => 'AKIAZL5DPQXXOMVPCU6K',
-			'secretAccessKey' => '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',
-			'region' => 'eu-west-2',
-			'bucket' => 'mudpack-bucket',
-			'folder' => '',
-			'requestHeaders' => array(),
-			'storageType' => 'standard',
-			'cloudfrontInvalidateEnabled' => true,
-			'cloudfrontDistributionId' => 'E1N6HAZ6NJH5C0',
-		],
-		'gcs' => [],
+    // 'aws'  => [
+	// 		'accessKey' => 'AKIAZL5DPQXXOMVPCU6K',
+	// 		'secretAccessKey' => '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',
+	// 		'region' => 'eu-west-2',
+	// 		'bucket' => 'mudpack-bucket',
+	// 		'folder' => '',
+	// 		'requestHeaders' => array(),
+	// 		'storageType' => 'standard',
+	// 		'cloudfrontInvalidateEnabled' => true,
+	// 		'cloudfrontDistributionId' => 'E1N6HAZ6NJH5C0',
+	// 	],
+	// 	'gcs' => [],
   ]
 ];
