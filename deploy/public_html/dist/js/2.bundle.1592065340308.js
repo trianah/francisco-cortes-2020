@@ -1,3 +1,0 @@
-/*! For license information please see 2.bundle.1592065340308.js.LICENSE.txt */
-(this.webpackJsonp=this.webpackJsonp||[]).push([[2],{11:function(e,t,n){"use strict";n.r(t);var o=n(25),c=n.n(o);t.default=function({node:e}){const t=new c.a(e,{cellAlign:"left",contain:!1,pageDots:!1,wrapAround:!0,prevNextButtons:!1,cellSelector:".c-carousel__item"});return()=>{t.destroy()}}}}]);
-//# sourceMappingURL=2.bundle.1592065340308.js.map
