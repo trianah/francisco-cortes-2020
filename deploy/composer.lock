@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6f19ab3a340496165e498491ca8d8215",
+    "content-hash": "e3b50ac62f5db75c16dfa537e13f3e9d",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -1218,6 +1218,43 @@
             ],
             "description": "An SVG sanitizer for PHP",
             "time": "2020-01-20T01:34:17+00:00"
+        },
+        {
+            "name": "ether/seo",
+            "version": "3.6.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ethercreative/seo.git",
+                "reference": "33c527413e601e146cb578bf9062d24c08f8aeda"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ethercreative/seo/zipball/33c527413e601e146cb578bf9062d24c08f8aeda",
+                "reference": "33c527413e601e146cb578bf9062d24c08f8aeda",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.2.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "seo",
+                "name": "SEO",
+                "developer": "Ether Creative",
+                "developerUrl": "https://ethercreative.co.uk",
+                "class": "ether\\seo\\Seo"
+            },
+            "autoload": {
+                "psr-4": {
+                    "ether\\seo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "SEO utilities including a unique field type, sitemap, & redirect manager",
+            "time": "2020-05-22T09:04:26+00:00"
         },
         {
             "name": "ether/splash",

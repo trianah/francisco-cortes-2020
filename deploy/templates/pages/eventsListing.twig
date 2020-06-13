@@ -1,0 +1,35 @@
+{# HERO #}
+{% include '/_components/heros/default' with {
+    heading: entry.title,
+    subheading: '',
+    image: null
+} %}
+
+
+
+<div class="site-container py-20">
+
+    {# EVENTS INTRO #}
+    {% set introText = entry.eventsIntroduction %}
+
+    {% if introText %}
+        <div class="mb-20 p-5 sm:p-10 bg-light-blue border-3 border-blue max-w-800 mx-auto text-center c-rich-text">
+            {{ introText|raw }}
+        </div>
+    {% endif %}
+
+    {# EVENTS LISTING #}
+    {% set eventEntries = craft.entries.section('eventsItems').order('eventDate desc') %}
+
+    <ul class="list-reset max-w-800 mx-auto">
+        {% for entry in eventEntries %}
+            {% include '/_components/listing/event-item' with {
+                heading: entry.title,
+                venue: entry.venue,
+                date: entry.eventDate,
+                time: entry.eventTime,
+                text: entry.eventDescription
+            } %}
+        {% endfor %}
+    </ul>
+</div>

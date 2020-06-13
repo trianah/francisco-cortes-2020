@@ -1,0 +1,46 @@
+{% set linksBlocks = linksBlocks|default(null) %}
+
+<div class="site-container py-20">
+<div class="content md-area l-links list-rest c-links-page">
+    {% for linksBlock in linksBlocks %}
+        <div class="mb-12">
+            <h2 class="mb-5">{{ linksBlock.heading }}</h2>
+            {% if linksBlock.links|length %}
+                <ul>
+                    {% for row in linksBlock.links %}
+                        <li><a href="{{ row.link }}" target="_blank">{{ row.name }}</a>{% if row.description %}: {{ row.description }}{% endif %}</li>
+                    {% endfor %}
+                    {# <li><a href="http://www.music.indiana.edu/department/composition/IUCStyleGuide.shtml">IU Composition Department Music Notation Style Guide:</a> a good reference for any score editing doubts</li>
+                    <li><a href="http://www.music.indiana.edu/department/composition/isfee/">Instrumentation Studies for Eyes and Ears:</a> Don Freund´s interactive score/video/commentary instrumentation site. User name: isfee; password: donfreund.</li> #}
+                </ul>
+            {% endif %}
+        </div>
+    {% endfor %}
+{# <h2>Teachers</h2>
+<ul>
+<li><a href="http://www.gabrielaortiz.com/">Gabriela Ortiz</a></li>
+</ul>
+<h2>Friend Composers</h2>
+<ul>
+<li><a href="http://dianasyrse.com/">Diana Syrse</a></li>
+<li><a href="http://www.jeremypodgursky.com/">Jeremy Podgursky</a></li>
+<li><a href="http://www.amybethkirsten.com/">Amy Beth Kirsten</a></li>
+<li><a href="http://www.melodyeotvos.com/">Melody Eotvos</a></li>
+<li><a href="http://www.takumaitoh.com/">Takuma Itoh</a></li>
+<li><a href="http://www.pauldooley.net/">Paul Dooley</a></li>
+</ul>
+<h2>Performers and Ensembles</h2>
+<ul>
+<li><a href="http://www.alarmwillsound.com/">Alarm Will Sound</a></li>
+<li><a href="http://alejandroescuer.com/">Alejandro Escuer</a></li>
+<li><a href="http://www.cassattquartet.com/">Cassatt String Quartet</a></li>
+</ul>
+<h2>Schools, Festivals and Institutions</h2>
+<ul>
+<li><a href="http://www.aspenmusicfestival.com/">Aspen Music Festival and School</a></li>
+<li><a href="http://www.newmusicsummerfestival.missouri.edu/">MIZZOU New Music Summer Festival</a></li>
+<li><a href="http://www.enmusica.unam.mx/">Escuela Nacional de Música</a></li>
+<li><a href="http://www.music.indiana.edu/">Jacobs School of Music</a></li>
+</ul> #}
+</div>
+</div>

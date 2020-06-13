@@ -1,0 +1,31 @@
+{% set heading = heading|default('') %}
+{% set venue = venue|default('') %}
+{% set date = date|default(null) %}
+{% set time = time|default(null) %}
+{% set text = text|default(null) %}
+
+<li class="c-event">
+    <div class="c-event__meta">
+        {% if date %}
+            <div class="c-event__square">
+                <span class="block c-event__square__day">{{ date|date('d') }}</span>
+                <span class="block c-event__square__month">{{ date|date('M') }}</span>
+                <span class="block c-event__square__year">{{ date|date('Y') }}</span>
+            </div>
+        {% endif %}
+        {% if time %}<span class="inline-block c-event__time">{{ time|date('g:i a') }}</span>{% endif %}
+    </div>
+    <div class="c-event__info">
+        {% if heading %}<p class="c-event__title">{{ heading }}</p>{% endif %}
+        {% if venue %}
+            <div class="c-event__place font-sans-regular">
+                <p>{{ venue|nl2br }}</p>
+            </div>
+        {% endif %}
+        {% if text %}
+            <div class="c-event__desc c-rich-text">
+                {{ text|raw }}
+            </div>
+        {% endif %}
+    </div>
+</li>

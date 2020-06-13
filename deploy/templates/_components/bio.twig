@@ -1,0 +1,25 @@
+{% set bio = bio|default(null) %}
+{% set image = image|default(null) %}
+{% set caption = caption|default('') %}
+{% set link = link|default(null) %}
+
+<div class="site-container py-20">
+    <div class="l-bio">
+        {% if bio %}
+            <div class="l-bio__text">
+                <div class="content md-area c-rich-text c-rich-text--loose">
+                    {{ bio|raw }}
+                </div>
+                {% if link %}<a data-barba-prevent class="styled-link alt-bio-link" href="{{ link.url }}">{{ link.text }}</a>{% endif %}
+            </div>
+        {% endif %}
+        <div class="l-bio__image">
+            {% if image %}
+                <figure>
+                    <img src="{{ image.url }}" alt="Photograph of composer Francisco Cortés Álvarez">
+                    {% if caption|length %}<figcaption>{{ caption }}</figcaption>{% endif %}
+                </figure>
+            {% endif %}
+        </div>
+    </div>
+</div>

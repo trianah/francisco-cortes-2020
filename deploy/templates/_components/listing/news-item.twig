@@ -1,0 +1,28 @@
+{% set heading = heading|default('') %}
+{% set date = date|default(null) %}
+{% set source = source|default('') %}
+{% set text = text|default(null) %}
+{% set link = link|default(null) %}
+{% set tags = tags|default(null) %}
+
+                    
+<li class="c-news__wrap">
+    <div class="c-news bg-light-grey">
+        <div class="c-news__info-wrap">
+            {% if heading %}<p class="c-news__title">{{ heading }}</p>{% endif %}
+            <div class="c-news__meta">
+                {% if date %}<p><time datetime="{{ date|date("Y-m-d") }}">{{ date|date("d M Y") }}</time></p>{% endif %}
+                {% if source %}<p>By {{ source }}</p>{% endif %}
+            </div>
+            <div class="c-news__desc">
+                {% if text %}
+                    <div class="c-rich-text">
+                        {{ text|raw }}
+                    </div>
+                {% endif %}
+                {% if link.url %}<a href="{{ link.url }}" target="{{ link.target }}" class="c-news__cta styled-link">{{ link.text|default('Read article') }}</a>{% endif %}
+                {# {% if tags|length %}<p class="c-news__tag--square">{{ tags[0].title }}</p>{% endif %} #}
+            </div>
+        </div>
+    </div>
+</li>

@@ -1,0 +1,55 @@
+.css-iitjom {
+  background-image: linear-gradient(
+    -180deg,
+    rgba(10, 16, 25, 0.1) 0%,
+    rgba(10, 16, 25, 0.3) 100%
+  );
+  padding: 1rem;
+}
+
+.hero-text {
+  @apply text-white font-serif-black;
+
+  text-align: center;
+  margin: 8rem 0 6rem;
+  width: 100%;
+  font-size: 2rem;
+  // @extend .font-black;
+
+  @media only screen and (min-width: $break-med) {
+    font-size: 2.5rem;
+  }
+
+  @media only screen and (min-width: $break-xlarge) {
+    margin: 10rem 0;
+    font-size: 3rem;
+  }
+}
+
+.hero-subtitle {
+  text-transform: uppercase;
+  display: block;
+  letter-spacing: 0.15em;
+  // @extend .font-light;
+
+  margin-top: 1rem;
+  font-size: 1.5rem;
+
+  @media only screen and (min-width: $break-med) {
+    font-size: 2rem;
+  }
+}
+
+// page headings
+.c-page-heading {
+  h1 {
+    padding: 140px 20px 100px;
+    letter-spacing: 0.09em;
+    font-size: 1.6rem;
+    text-align: center;
+
+    @media only screen and (min-width: $break-med) {
+      font-size: 3rem;
+    }
+  }
+}

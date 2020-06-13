@@ -1,0 +1,25 @@
+{# HERO #}
+{% include '/_components/heros/default' with {
+    heading: entry.title,
+    subheading: '',
+    image: null
+} %}
+
+
+{# CONTACT #}
+{% set links = entry.contactLinks|length ? entry.contactLinks : null %}
+
+<div class="site-container l-contact py-20">
+    <div class="l-contact__image">
+        <img src="/dist/img/music-score.jpg" alt="" width="600" class="block">
+    </div>
+    <div class="l-contact__text">
+        {% if links %}
+            <div class="content c-contact-message">
+                {% for link in links %}
+                    <p>{{ link.label }} <a href="{{ link.contactLink.url }}" target="{{ link.contactLink.target }}">{{ link.contactLink.text }}</a></p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</div>

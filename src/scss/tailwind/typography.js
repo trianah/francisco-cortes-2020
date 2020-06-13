@@ -135,11 +135,17 @@ const fontSize = {
   */
 
 const fontFamily = {
-  light: ["Helvetica", "Times"],
+  "serif-light": ["Merriweather-Light", "Georgia", "serif"],
 
-  regular: ["Helvetica", "Times"],
+  "serif-regular": ["Merriweather-Regular", "Georgia", "serif"],
 
-  bold: ["Helvetica", "Times"]
+  "serif-bold": ["Merriweather-Bold", "Georgia", "serif"],
+
+  "serif-black": ["Merriweather-Black", "Georgia", "serif"],
+
+  "sans-light": ["Brandon-Grotesque-Thin", "Arial", "serif"],
+
+  "sans-regular": ["Brandon-Grotesque-Regular", "Arial", "sans-serif"]
 };
 
 /*

@@ -1,0 +1,16 @@
+.c-event__meta {
+  font-size: 15px;
+}
+
+.c-event__time {
+  font-size: 15px;
+}
+
+@media only screen and (min-width: 700px) {
+  .c-event__square {
+    display: block;
+    width: 80px;
+    height: 80px;
+    font-size: 0.8rem;
+  }
+}

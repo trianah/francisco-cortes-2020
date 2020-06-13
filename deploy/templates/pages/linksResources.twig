@@ -1,0 +1,11 @@
+{# HERO #}
+{% include '/_components/heros/default' with {
+    heading: entry.title,
+    subheading: '',
+    image: null
+} %}
+
+{# LINKS BLOCK #}
+{% include '/_components/links-block' with {
+    linksBlocks: entry.linksSections|length ? entry.linksSections : null
+} %}

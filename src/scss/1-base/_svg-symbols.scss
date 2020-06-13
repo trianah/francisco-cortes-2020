@@ -22,13 +22,43 @@
   }
 }
 
-.icon--logo {
-  width: rem(59.763px);
+.icon--facebook {
+  width: rem(13px);
   &:after {
-    padding-bottom: 86.4406779661017%;
+    padding-bottom: 192.30769230769232%;
+  }
+}
+.icon--logo {
+  width: rem(162px);
+  &:after {
+    padding-bottom: 44.44444444444444%;
+  }
+}
+.icon--soundcloud {
+  width: rem(37px);
+  &:after {
+    padding-bottom: 48.64864864864865%;
+  }
+}
+.icon--vimeo {
+  width: rem(29px);
+  &:after {
+    padding-bottom: 86.20689655172413%;
   }
 }
 
-$icon--logo-width: 59px;
-$icon--logo-height: 51px;
-$icon--logo-ratio: 0.864406779661017;
+$icon--facebook-width: 13px;
+$icon--facebook-height: 25px;
+$icon--facebook-ratio: 1.9230769230769231;
+
+$icon--logo-width: 162px;
+$icon--logo-height: 72px;
+$icon--logo-ratio: 0.4444444444444444;
+
+$icon--soundcloud-width: 37px;
+$icon--soundcloud-height: 18px;
+$icon--soundcloud-ratio: 0.4864864864864865;
+
+$icon--vimeo-width: 29px;
+$icon--vimeo-height: 25px;
+$icon--vimeo-ratio: 0.8620689655172413;

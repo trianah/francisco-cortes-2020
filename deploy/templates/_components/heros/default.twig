@@ -1,0 +1,5 @@
+{% set heading = heading|default('') %}
+<div class="relative c-page-heading border-b-3 border-blue">
+    <img src="/dist/img/sheet-music.jpg" alt="" class="absolute block h-full w-full object-cover">
+    {% if heading %}<h1 class="relative text-white font-serif-bold">{{ heading }}</h1>{% endif %}
+</div>

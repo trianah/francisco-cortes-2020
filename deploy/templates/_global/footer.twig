@@ -1,18 +1,31 @@
+{% import '/_macros/helpers' as h %}
+
 {% set footerLinks = footerLinks|default([]) %}
 
-<footer class="footer border-t border-grey py-1">
+{% set socialLinks = [
+	{
+		url: 'https://www.facebook.com/franciscocortesalvarez',
+		icon: 'facebook'
+	},
+	{
+		url: 'https://vimeo.com/user8242078',
+		icon: 'vimeo'
+	},
+	{
+		url: 'https://soundcloud.com/francisco-cort-s-lvarez',
+		icon: 'soundcloud'
+	}
+] %}
+
+<footer class="zzzfooter font-sans-regular bg-blue text-grey py-8">
 	<div class="wrapper">
 		<div class="flex flex-wrap justify-between items-center">
-			{% if footerLinks|length %}
-			<ul class="flex -ml-1">
-				{% for link in footerLinks %}
-				<li>
-					<a class="block p-1" href="{{ link.url }}">{{ link.title }}</a>
-				</li>
+			<a href="mailto:cortes.alvarez@gmail.com" class="hover:opacity-50 trans trans-opacity">cortes.alvarez@gmail.com</a>
+			<ul class="list-reset flex items-center">
+				{% for item in socialLinks %}
+					<li><a href="{{ item.url }}" target="_blank" class="inline-block p-2 hover:opacity-50 trans trans-opacity">{{ h.symbol(item.icon) }}</a></li>
 				{% endfor %}
 			</ul>
-			{% endif %}
-			<span class="ml-auto">&copy; {{ now|date('Y') }} {{ currentSite.name }}</span>
 		</div>
 	</div>
 </footer>

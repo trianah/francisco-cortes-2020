@@ -1,0 +1,14 @@
+{# HERO #}
+{% include '/_components/heros/default' with {
+    heading: entry.title,
+    subheading: '',
+    image: null
+} %}
+
+{# BIO #}
+{% include '/_components/bio' with {
+    bio: entry.biography|length ? entry.biography : null,
+    image: entry.photo|length ? entry.photo[0] : null,
+    caption: entry.photoCaption ? entry.photoCaption : '',
+    link: entry.bottomLink|length ? entry.bottomLink : null
+} %}

@@ -1,0 +1,26 @@
+{# HERO #}
+{% include '/_components/heros/default' with {
+    heading: entry.title,
+    subheading: '',
+    image: null
+} %}
+
+
+{# News LISTING #}
+{% set newsEntries = craft.entries.section('newsItems').order('newsDate desc') %}
+
+<div class="site-container py-20">
+    {% if newsEntries %}
+        <ul class="list-reset">
+            {% for entry in newsEntries %}
+                {% include '/_components/listing/news-item' with {
+                    heading: entry.title,
+                    date: entry.newsDate,
+                    source: entry.newsSource,
+                    text: entry.newsInfo,
+                    link: entry.newsLink
+                } %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>

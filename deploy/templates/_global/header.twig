@@ -3,8 +3,8 @@
 {% set menuLinks = menuLinks|default([]) %}
 
 {# Header JS is instantiated in app.js, so no need for a data-behaviour #}
-<header class="g-header fixed top-0 left-0 w-full z-50">
-	<div class="g-header__inner flex flex-wrap justify-between items-center relative bg-blue px-1 z-50">
+<header class="g-header c-header fixed top-0 left-0 w-full z-50">
+	<div class="g-header__inner flex flex-wrap justify-between items-center relative zzzbg-blue px-1 z-50">
 		<a class="g-header__logo inline-block" href="/" title="">
 			{{ h.symbol('logo') }}
 			<span class="sr-only">{{ currentSite.name }}</span>

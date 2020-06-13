@@ -17,9 +17,12 @@
 const colors = {
   transparent: "transparent",
   black: "#22292f",
-  grey: "#e7ecf0",
+  grey: "#85878B",
+  "light-grey": "#eee",
   white: "#ffffff",
-  border: "#979797"
+  border: "#979797",
+  blue: "#0a1019",
+  "light-blue": "#cadadf"
 };
 
 module.exports = {

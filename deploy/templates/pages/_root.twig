@@ -1,0 +1,16 @@
+{% set entry = entry|default(null) %}
+{% set entry_id = (entry) ? entry.id : null %}
+{% set entry_type = (entry) ? entry.type : 'standard' %}
+
+{% embed '/wrapper/_layout' %}
+
+{% block content %}
+
+{% include '/pages/' ~ entry_type ~ '.twig' with {
+	entry: entry,
+    entry_id: entry_id,
+    entry_type: entry_type
+} %}
+
+{% endblock %}
+{% endembed %}

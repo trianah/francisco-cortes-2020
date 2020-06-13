@@ -26,7 +26,7 @@ html {
 }
 
 body {
-  @apply font-regular min-h-screen;
+  @apply font-serif-light min-h-screen;
 
   font-size: responsive 15px 18px;
   text-rendering: optimizeLegibility;
@@ -66,8 +66,6 @@ svg {
 
 h1,
 .h1,
-h2,
-.h2,
 h3,
 .h3,
 h4,
@@ -88,6 +86,7 @@ h1,
 h2,
 .h2 {
   font-size: responsive 23px 50px;
+  font-weight: bold;
 }
 
 h3,
@@ -153,4 +152,37 @@ a {
     background-repeat: no-repeat;
     background-position: 0 0.4em;
   }
+}
+
+.site-container {
+  //border: 1px dashed blue;
+  margin: 0 gutter(1);
+
+  @media only screen and (min-width: $break-small) {
+    margin: 0 gutter(2);
+  }
+
+  @media only screen and (min-width: $break-med) {
+    margin: 0 gutter(3);
+  }
+
+  @media only screen and (min-width: $break-large) {
+    margin: 0 gutter(4);
+  }
+
+  @media only screen and (min-width: $break-xlarge) {
+    max-width: 65rem;
+    margin: 0 auto;
+  }
+}
+
+// sticky footer
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }

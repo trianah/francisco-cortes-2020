@@ -1,3 +1,22 @@
+$base-padding: 20;
+
+$default-letter-spacing: 0.09em;
+$default-border-radius: 0.2rem;
+
+$break-small: 450px;
+$break-med: 700px;
+$break-menu: 800px;
+$break-large: 900px;
+$break-xlarge: 1200px;
+
+$break-nav: 650px;
+
+$brand-facebook: #3b5998;
+$brand-instagram: #c32aa3;
+$brand-youtube: #b00;
+
+$max-w-text: 40em;
+
 /*
   Media query debugger
 */
@@ -28,7 +47,7 @@
 @import "2-objects/**";
 @import "3-global/**";
 @import "4-components/**";
-@import "5-pages/**";
+// @import "5-pages/**";
 
 /*! purgecss end ignore */
 

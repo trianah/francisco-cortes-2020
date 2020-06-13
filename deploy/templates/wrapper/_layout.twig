@@ -8,7 +8,7 @@
 {% set gaTrackingId = getenv('GA_TRACKING_ID') %} #}
 <!DOCTYPE html>
 <!-- build:cms-->
-{% set stamp = ".1591822263052" %}
+{% set stamp = "" %}
 <!-- endbuild-->
 <html lang="en-gb" dir="ltr" class="no-js">
   <head>
@@ -57,29 +57,38 @@
 	<body>
 		{% set menuLinks = [
 			{
-				text: 'Home',
-				url: siteUrl
+				text: 'Bio',
+				url: siteUrl ~ 'biography'
 			},
 			{
-				text: 'About Us',
-				url: siteUrl ~ 'about-us'
+				text: 'Works',
+				url: siteUrl ~ 'works'
 			},
 			{
-				text: 'Team',
-				url: siteUrl ~ 'team'
+				text: 'Media',
+				url: siteUrl ~ 'media'
 			},
 			{
 				text: 'News',
 				url: siteUrl ~ 'news'
 			},
 			{
+				text: 'Events',
+				url: siteUrl ~ 'events'
+			},
+			{
+				text: 'Links & Resources',
+				url: siteUrl ~ 'links-resources'
+			},
+			{
 				text: 'Contact',
-				url: siteUrl ~ 'contact-us'
+				url: siteUrl ~ 'contact'
 			}
 		] %}
 		{% include '/_global/header' with {
 			menuLinks: menuLinks
 		} %}
+
 		<main id="page-wrapper" data-barba="wrapper">
 			<div id="page-container" data-barba="container" data-barba-namespace="home">
 				{% block content %}

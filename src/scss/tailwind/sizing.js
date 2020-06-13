@@ -47,6 +47,7 @@ const width = {
 
 const minWidth = {
   "0": "0",
+  "800": "800px",
   full: "100%"
 };
 
