@@ -1,0 +1,11 @@
+/*! @spon/plugins */
+
+/*! ModuleConcatenation bailout: Module is referenced from these modules with unsupported syntax: ./behaviours lazy ^\.\/.*$ namespace object (referenced with context element) */
+
+/*! all exports used */
+
+/*! exports provided: default */
+
+/*!*****************************!*\
+  !*** ./behaviours/Video.js ***!
+  \*****************************/
