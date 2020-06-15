@@ -8,7 +8,7 @@
 {% set gaTrackingId = getenv('GA_TRACKING_ID') %} #}
 <!DOCTYPE html>
 <!-- build:cms-->
-{% set stamp = ".1592121780666" %}
+{% set stamp = "" %}
 <!-- endbuild-->
 <html lang="en-gb" dir="ltr" class="no-js">
   <head>
@@ -58,31 +58,38 @@
 		{% set menuLinks = [
 			{
 				text: 'Bio',
-				url: siteUrl ~ 'biography'
+				url: siteUrl ~ 'biography',
+				slug: 'biography'
 			},
 			{
 				text: 'Works',
-				url: siteUrl ~ 'works'
+				url: siteUrl ~ 'works',
+				slug: 'works'
 			},
 			{
 				text: 'Media',
-				url: siteUrl ~ 'media'
+				url: siteUrl ~ 'media',
+				slug: 'media'
 			},
 			{
 				text: 'News',
-				url: siteUrl ~ 'news'
+				url: siteUrl ~ 'news',
+				slug: 'news'
 			},
 			{
 				text: 'Events',
-				url: siteUrl ~ 'events'
+				url: siteUrl ~ 'events',
+				slug: 'events'
 			},
 			{
 				text: 'Links & Resources',
-				url: siteUrl ~ 'links-resources'
+				url: siteUrl ~ 'links-resources',
+				slug: 'links-resources'
 			},
 			{
 				text: 'Contact',
-				url: siteUrl ~ 'contact'
+				url: siteUrl ~ 'contact',
+				slug: 'contact'
 			}
 		] %}
 		{% include '/_global/header' with {
@@ -98,7 +105,7 @@
 			</div>
 		</main>
 
-		{% include '/_global/modal' %}
+		{# {% include '/_global/modal' %} #}
 		
 		{% include '/_global/footer' with {
 			footerLinks: [

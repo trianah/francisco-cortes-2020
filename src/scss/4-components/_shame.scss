@@ -572,6 +572,7 @@ textarea {
   .site-container--wide {
     max-width: 85rem;
     margin: 0 auto;
+    padding: 0 60px;
   }
 }
 .c-footer {
@@ -672,14 +673,6 @@ textarea {
 @media only screen and (min-width: 1200px) {
   .c-home-panels {
     display: flex;
-  }
-}
-.c-home-panels > * {
-  margin-top: 60px;
-}
-@media only screen and (min-width: 450px) {
-  .c-home-panels > * {
-    padding: 20px;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -986,7 +979,6 @@ textarea {
 }
 .c-news__desc {
   line-height: 1.3;
-  margin-top: 1.5em;
   font-size: 1rem;
 }
 @media only screen and (min-width: 700px) {
@@ -997,7 +989,6 @@ textarea {
 .c-news__cta {
   font-size: 1.2rem;
   font-weight: 700;
-  margin-top: 1.5rem;
   letter-spacing: 0.05em;
   display: inline-block;
   margin-right: 0.5rem;

@@ -10,24 +10,37 @@
 
 .g-header {
   will-change: transform;
+
+  @screen lg {
+    @apply flex;
+  }
 }
 
 .g-header__inner {
   @include calc-fluid("height", 76px, 90px);
+
+  @screen lg {
+    width: 300px;
+  }
 }
 
 .g-header__nav {
-  @apply overflow-y-auto;
+  @apply overflow-y-auto z-40;
 
   height: calc(100 * var(--vh, 1vh));
   transform: translate3d(100%, 0, 0);
   transition: transform 200ms, opacity 200ms;
 
-  @screen md {
-    @apply overflow-hidden h-auto;
+  @screen lg {
+    @apply overflow-hidden h-auto z-50;
 
-    // transform: translate3d(0, 0, 0);
-    background: transparent;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  &:focus {
+    appearance: none;
+    outline: none;
   }
 }
 
@@ -37,15 +50,41 @@
 }
 
 /* Headroom classes */
-.headroom {
-  will-change: transform;
-  transition: transform 200ms linear;
+// .headroom {
+//   will-change: transform;
+//   transition: transform 200ms linear;
+// }
+
+// .headroom--pinned {
+//   transform: translateY(0%);
+// }
+
+// .headroom--unpinned {
+//   transform: translateY(-100%);
+// }
+
+.g-header__nav-list {
+  @apply p-8 text-center flex flex-wrap flex-col items-center justify-start h-full overflow-hidden;
+
+  margin-top: 120px;
+
+  @screen lg {
+    @apply flex-row justify-end relative z-50;
+    margin-top: 0;
+  }
 }
 
-.headroom--pinned {
-  transform: translateY(0%);
+.g-header__nav-item {
+  @apply text-center mb-4 font-serif-bold;
 }
 
-.headroom--unpinned {
-  transform: translateY(-100%);
+.g-header__nav-link {
+  @apply p-2 border-b-2 border-transparent trans trans-fast trans-b-color;
+}
+
+.g-header__nav-link {
+  &:hover,
+  &.is-active {
+    @apply border-white;
+  }
 }

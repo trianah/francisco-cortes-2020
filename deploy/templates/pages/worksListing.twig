@@ -1,0 +1,40 @@
+{# HERO #}
+{% include '/_components/heros/default' with {
+    heading: entry.title,
+    subheading: '',
+    image: null
+} %}
+
+
+{# WORKS LISTING #}
+{% set entries = craft.entries.section('worksItems') %}
+{% set relatedCats = craft.categories.relatedTo(entries).orderBy('title asc') %}
+
+<div class="site-container py-20">
+
+    {# Loop the categories #}
+    {% for category in relatedCats %}
+        <div class="l-work-cat-block no-m-first">
+            <h2 class="h2--styled mb-5">{{ category.title }}</h2>
+
+            {# Get and loop through entries related to this cat #}
+            {% set relatedEntries = craft.entries.relatedTo(category).orderBy('date asc') %}
+            {% for entry in relatedEntries %}
+                
+                {% include '/_components/listing/work-item' with {
+                    heading: entry.title ?? '',
+                    slug: entry.slug ?? '',
+                    category: entry.category|length ? entry.category[0] : null,
+                    instruments: entry.instruments ?? '',
+                    duration: entry.duration ?? '',
+                    date: entry.date|length ? entry.date : null,
+                    revDate: entry.revDate|length ? entry.revDate : null,
+                    asset: entry.media|length ? entry.media[0] : null
+                } %}
+
+            {% endfor %}
+            
+        </div>
+
+    {% endfor %}       
+</div>

@@ -3,8 +3,9 @@
 {% set date = date|default(null) %}
 {% set time = time|default(null) %}
 {% set text = text|default(null) %}
+{% set modifier = modifier|default('') %}
 
-<li class="c-event">
+<li class="c-event c-event--{{ modifier }}">
     <div class="c-event__meta">
         {% if date %}
             <div class="c-event__square">

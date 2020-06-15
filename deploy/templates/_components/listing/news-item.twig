@@ -3,11 +3,11 @@
 {% set source = source|default('') %}
 {% set text = text|default(null) %}
 {% set link = link|default(null) %}
-{% set tags = tags|default(null) %}
+{% set modifier = modifier|default('') %}
 
                     
 <li class="c-news__wrap">
-    <div class="c-news bg-light-grey">
+    <div class="c-news c-news--{{ modifier }} bg-light-grey">
         <div class="c-news__info-wrap">
             {% if heading %}<p class="c-news__title">{{ heading }}</p>{% endif %}
             <div class="c-news__meta">
@@ -20,7 +20,7 @@
                         {{ text|raw }}
                     </div>
                 {% endif %}
-                {% if link.url %}<a href="{{ link.url }}" target="{{ link.target }}" class="c-news__cta styled-link">{{ link.text|default('Read article') }}</a>{% endif %}
+                {% if link.url %}<a href="{{ link.url }}" target="{{ link.target }}" class="c-news__cta styled-link mt-5">{{ link.text|default('Read article') }}</a>{% endif %}
                 {# {% if tags|length %}<p class="c-news__tag--square">{{ tags[0].title }}</p>{% endif %} #}
             </div>
         </div>

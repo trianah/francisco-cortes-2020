@@ -1,0 +1,38 @@
+{% set embeddedAsset = embeddedAsset|default(null) %}
+{% set url = embeddedAsset ? embeddedAsset.url : '' %}
+
+{# {{ embeddedAsset ? embeddedAsset.html }} #}
+{# {{ asset.providerName }} #}
+
+{% if url|length %}
+{% switch embeddedAsset.providerName %}
+
+    {% case 'SoundCloud' %}
+    <div class="" style="width: 100%; height: 110px;">
+        <iframe src="https://w.soundcloud.com/player/?url={{ url }}&amp;visual=false&amp;buying=false&amp;liking=false&amp;download=false&amp;sharing=false&amp;show_comments=false&amp;show_playcount=false&amp;show_artwork=true&amp;show_user=false&amp;auto_play=false&amp;hide_related=true&amp;show_reposts=false&amp;show_teaser=false&amp;callback=true" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+    </div>
+
+    {% case 'Vimeo' %}
+    {% set id = url[-8:] %}
+    <div class="player-wrapper">
+    <div class="react-player" style="width: 100%; height: 100%;">
+    <div data-vimeo-initialized="true" style="width: 100%; height: 100%; overflow: hidden; background-color: black;">
+        <iframe src="https://player.vimeo.com/video/{{ id }}?title=0&amp;byline=0&amp;portrait=0&amp;autopause=0&amp;app_id=122963" width="320" height="240" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="" title="Telefonema" data-ready="true" style="width: 100%; height: 100%;"></iframe>
+    </div>
+    </div>
+    </div>
+
+    {% case 'YouTube' %}
+    {% set id = url[-11:] %}
+    <div class="player-wrapper">
+    <div class="react-player react-player--youtube" style="width: 100%; height: 100%;">
+    <div style="width: 100%; height: 100%;">
+        {# <iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{{ id }}?autoplay=0&amp;mute=0&amp;controls=1&amp;origin=https%3A%2F%2Ffrancisco-cortes.netlify.app&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;enablejsapi=1"></iframe> #}
+        <iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{{ id }}?autoplay=0&amp;mute=0&amp;controls=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;enablejsapi=1"></iframe>
+    </div>
+    </div>
+    </div>
+
+
+{% endswitch %}
+{% endif %}

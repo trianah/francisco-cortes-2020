@@ -4,7 +4,7 @@ import barba from "@barba/core";
 import barbaCss from "@barba/css";
 import "lazysizes";
 import Header from "@/behaviours/Header";
-import Modal from "@/behaviours/Modal";
+// import Modal from "@/behaviours/Modal";
 import SetVh from "@/behaviours/SetVh";
 import "@/plugins/logger";
 import webfontloader from "@/plugins/webfontloader";
@@ -29,12 +29,12 @@ loadModule({
   keepAlive: true
 });
 
-loadModule({
-  module: Modal,
-  id: "modal",
-  node: document.body,
-  keepAlive: true
-});
+// loadModule({
+//   module: Modal,
+//   id: "modal",
+//   node: document.body,
+//   keepAlive: true
+// });
 
 loadModule({
   module: SetVh,

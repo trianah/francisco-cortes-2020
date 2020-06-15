@@ -1,10 +1,10 @@
-import { eventBus } from "@spon/plugins";
+import { domEvents, withPlugins, eventBus } from "@spon/plugins";
 import Headroom from "headroom.js";
 import gsap from "gsap";
 import toggle from "@/ui/Toggle";
 // import accordion from '@/ui/Accordion'
 
-function Header({ node, name }) {
+function Header({ node, name, plugins: { addEvents } }) {
   // Main Mobile Menu START
   let windowTop = 0;
   const nav = toggle({
@@ -93,6 +93,21 @@ function Header({ node, name }) {
   // 		if (menuAccordion) menuAccordion.destroy()
   // 	}
   // })
+  const mainNavLinks = node.querySelectorAll("[main-nav-link]");
+
+  function updateNavLinks(e, el) {
+    mainNavLinks.forEach(n => {
+      if (n === el) {
+        n.classList.add("is-active");
+      } else {
+        n.classList.remove("is-active");
+      }
+    });
+  }
+
+  addEvents({
+    "click [main-nav-link]": updateNavLinks
+  });
 }
 
-export default Header;
+export default withPlugins(domEvents)(Header);

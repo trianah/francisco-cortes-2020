@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: 527ddf15-9602-450e-a91c-3caf5f024dd8
-dateModified: 1592062795
+dateModified: 1592219134
 email:
   fromEmail: devs@ournameismud.co.uk
   fromName: Mudpack
@@ -31,6 +31,20 @@ fieldGroups:
   ff85486a-7911-4de0-a7b7-d52b56e93f24:
     name: SEO
 fields:
+  11ee3176-0617-48a9-8448-510f231b1540:
+    contentColumnType: datetime
+    fieldGroup: 80ccde80-89c4-4e0f-b5cc-28af35fea485
+    handle: date
+    instructions: '(only shows year)'
+    name: Date
+    searchable: true
+    settings:
+      minuteIncrement: '30'
+      showDate: true
+      showTime: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Date
   142b06b3-1cd6-41e9-9e43-6a975eadfdc9:
     contentColumnType: text
     fieldGroup: e9ec2286-c557-49b1-aca5-af1f8fc01b6f
@@ -105,6 +119,24 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Date
+  345bd0f1-eb0e-42ff-bf49-70ef17e3b15f:
+    contentColumnType: text
+    fieldGroup: 80ccde80-89c4-4e0f-b5cc-28af35fea485
+    handle: duration
+    instructions: ''
+    name: Duration
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: '1'
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   360e460f-7aca-4a4b-89d1-5153e80ca229:
     contentColumnType: text
     fieldGroup: 4463d226-a8f1-42b7-a903-b2b23fe9d33f
@@ -146,6 +178,38 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  4bfeb49d-5ae5-4074-828b-1f80aa3d7137:
+    contentColumnType: string
+    fieldGroup: 80ccde80-89c4-4e0f-b5cc-28af35fea485
+    handle: media
+    instructions: ''
+    name: Media
+    searchable: true
+    settings:
+      allowSelfRelations: ''
+      allowedKinds:
+        - audio
+        - json
+        - video
+      defaultUploadLocationSource: 'volume:22c6b34c-7264-4c51-8ca5-1be301d6b6c4'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add a media asset'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:b7ec1d37-6dc1-4ca7-b053-b98ce8191440'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
   5954f550-1860-4184-bc7e-1493824bc055:
     contentColumnType: string
     fieldGroup: e9ec2286-c557-49b1-aca5-af1f8fc01b6f
@@ -332,6 +396,24 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Date
+  80bed2d6-b2f1-49cf-bdfc-49951496ee37:
+    contentColumnType: text
+    fieldGroup: 80ccde80-89c4-4e0f-b5cc-28af35fea485
+    handle: instruments
+    instructions: ''
+    name: Instrument(s)
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '2'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   964681ab-fbfe-4568-8969-fa446645e985:
     contentColumnType: string
     fieldGroup: 6c286577-1b0a-48fc-8ada-b44c2450248b
@@ -492,6 +574,20 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Matrix
+  b8c2d4da-f7eb-474f-9e1c-e9e9e86fa717:
+    contentColumnType: datetime
+    fieldGroup: 80ccde80-89c4-4e0f-b5cc-28af35fea485
+    handle: revDate
+    instructions: '(only shows year)'
+    name: 'Rev Date'
+    searchable: true
+    settings:
+      minuteIncrement: '30'
+      showDate: true
+      showTime: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Date
   c2e08f4a-9c3f-4844-9fe6-d3889685ab3c:
     contentColumnType: text
     fieldGroup: afe64637-a00f-4a3a-aeea-64fa8960145b
@@ -510,6 +606,29 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  c503c83f-afa0-4119-ad2c-9de07868d7a1:
+    contentColumnType: string
+    fieldGroup: 80ccde80-89c4-4e0f-b5cc-28af35fea485
+    handle: category
+    instructions: ''
+    name: Category
+    searchable: true
+    settings:
+      allowLimit: false
+      allowMultipleSources: false
+      allowSelfRelations: ''
+      branchLimit: '1'
+      limit: null
+      localizeRelations: false
+      selectionLabel: ''
+      source: 'group:e4cbabbe-d706-4cb8-b68f-6ae5204866f5'
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: ''
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Categories
   ceabe672-36c2-4e99-b2a8-90fee44b2010:
     contentColumnType: string
     fieldGroup: afe64637-a00f-4a3a-aeea-64fa8960145b
@@ -1287,11 +1406,36 @@ sections:
     enableVersioning: true
     entryTypes:
       8beae2f6-20b1-42d3-99a3-1cc3c39f51e8:
+        fieldLayouts:
+          78544608-2319-43bf-b179-24fe9f88db07:
+            tabs:
+              -
+                fields:
+                  11ee3176-0617-48a9-8448-510f231b1540:
+                    required: false
+                    sortOrder: 4
+                  345bd0f1-eb0e-42ff-bf49-70ef17e3b15f:
+                    required: false
+                    sortOrder: 3
+                  4bfeb49d-5ae5-4074-828b-1f80aa3d7137:
+                    required: false
+                    sortOrder: 6
+                  80bed2d6-b2f1-49cf-bdfc-49951496ee37:
+                    required: false
+                    sortOrder: 2
+                  b8c2d4da-f7eb-474f-9e1c-e9e9e86fa717:
+                    required: false
+                    sortOrder: 5
+                  c503c83f-afa0-4119-ad2c-9de07868d7a1:
+                    required: true
+                    sortOrder: 1
+                name: Content
+                sortOrder: 1
         handle: worksItems
         hasTitleField: true
         name: 'Works Items'
         sortOrder: 1
-        titleFormat: null
+        titleFormat: ''
         titleLabel: Title
     handle: worksItems
     name: 'Works Items'
@@ -1381,6 +1525,13 @@ sections:
         hasTitleField: true
         name: Bio
         sortOrder: 1
+        titleFormat: ''
+        titleLabel: Title
+      f41ed250-9101-43f4-b324-b99b028919d0:
+        handle: mediaListing
+        hasTitleField: true
+        name: 'Media Listing'
+        sortOrder: 7
         titleFormat: ''
         titleLabel: Title
       fb082740-68da-4dde-af0e-9977ffdd3510:
@@ -1479,9 +1630,9 @@ system:
   schemaVersion: 3.4.10
   timeZone: America/Los_Angeles
 tagGroups:
-  38f53f05-57c7-4f1a-a372-d007e1ac99b7:
-    handle: news
-    name: News
+  73716440-7a32-4b76-9b3b-31fc6e874ac1:
+    handle: instruments
+    name: Instruments
 users:
   allowPublicRegistration: false
   defaultGroup: null
@@ -1508,11 +1659,11 @@ volumes:
     type: craft\volumes\Local
     url: '@web/resources/stock-photography'
   b7ec1d37-6dc1-4ca7-b053-b98ce8191440:
-    handle: videos
+    handle: media
     hasUrls: true
-    name: Videos
+    name: Media
     settings:
-      path: '@webroot/resources/videos'
+      path: '@webroot/resources/media'
     sortOrder: 2
     type: craft\volumes\Local
-    url: '@web/resources/videos'
+    url: '@web/resources/media'

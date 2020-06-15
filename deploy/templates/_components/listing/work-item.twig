@@ -1,0 +1,31 @@
+{% set heading = heading|default('') %}
+{% set slug = slug|default('') %}
+{% set category = category|default(null) %}
+{% set instruments = instruments|default('') %}
+{% set duration = duration|default('') %}
+{% set date = date|default(null) %}
+{% set revDate = revDate|default(null) %}
+{% set asset = asset|default(null) %}
+
+<div class="c-work-item">
+    <h3 class="c-work-item__title mb-0">{{ heading }}</h3>
+    <p class="font-sans-regular font-600 mt-2 text-meta-works text-grey tracking-wide">{% if duration|length %}{{ duration }} {% endif %}{% if date %}({{ date|date('Y') }}{% if revDate %}, rev.{{ revDate|date('Y') }}{% endif %}){% endif %}</p>
+    {% if instruments %}
+        <p class="c-work-item__desc mt-3 mb-0">
+            {{ instruments|nl2br }}
+        </p>
+    {% endif %}
+
+    {% if asset %}    
+        {# {% set embeddedAsset = craft.embeddedAssets.get(asset) %}
+
+        <div class="c-work-item__media">
+            <div class="media-size">
+                {% include '/_components/media/_switch' with {
+                    embeddedAsset: embeddedAsset
+                } %}
+            </div>
+        </div> #}
+        <a data-barba-prevent href="/media#{{ slug }}" class="c-news__cta styled-link mt-2">media resource</a>
+    {% endif %}
+</div>

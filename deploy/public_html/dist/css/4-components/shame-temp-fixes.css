@@ -1,0 +1,26 @@
+.c-event__meta {
+  font-size: 15px;
+}
+
+.c-event__time {
+  font-size: 15px;
+}
+
+@media only screen and (min-width: 700px) {
+  .c-event__square {
+    display: block;
+    width: 80px;
+    height: 80px;
+    font-size: 0.8rem;
+  }
+}
+
+.c-news.c-news--home .c-news__title {
+  font-size: 1.2rem;
+}
+
+.c-home-panels .c-news__wrap + .c-news__wrap {
+  margin-top: 2rem;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIjQtY29tcG9uZW50cy9zaGFtZS10ZW1wLWZpeGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDRSxlQUFlO0FBQUE7O0FBR2pCO0VBQ0UsZUFBZTtBQUFBOztBQUdqQjtFQUNFO0lBQ0UsY0FBYztJQUNkLFdBQVc7SUFDWCxZQUFZO0lBQ1osaUJBQWlCO0VBQUE7QUFDbEI7O0FBR0g7RUFDRSxpQkFBaUI7QUFBQTs7QUFHbkI7RUFFSSxnQkFBZ0I7QUFBQSIsImZpbGUiOiI0LWNvbXBvbmVudHMvc2hhbWUtdGVtcC1maXhlcy5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIkZW52OiBcImRldmVsb3BtZW50XCI7XG4uYy1ldmVudF9fbWV0YSB7XG4gIGZvbnQtc2l6ZTogMTVweDtcbn1cblxuLmMtZXZlbnRfX3RpbWUge1xuICBmb250LXNpemU6IDE1cHg7XG59XG5cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aDogNzAwcHgpIHtcbiAgLmMtZXZlbnRfX3NxdWFyZSB7XG4gICAgZGlzcGxheTogYmxvY2s7XG4gICAgd2lkdGg6IDgwcHg7XG4gICAgaGVpZ2h0OiA4MHB4O1xuICAgIGZvbnQtc2l6ZTogMC44cmVtO1xuICB9XG59XG5cbi5jLW5ld3MuYy1uZXdzLS1ob21lIC5jLW5ld3NfX3RpdGxlIHtcbiAgZm9udC1zaXplOiAxLjJyZW07XG59XG5cbi5jLWhvbWUtcGFuZWxzIHtcbiAgLmMtbmV3c19fd3JhcCArIC5jLW5ld3NfX3dyYXAge1xuICAgIG1hcmdpbi10b3A6IDJyZW07XG4gIH1cbn0iXX0= */

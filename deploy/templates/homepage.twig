@@ -7,60 +7,59 @@
 			image: null
 		} %}
 
-		{# <div class="wrapper">
-			<div class="g-flex">
-				<div class="w-6/12">
-					<form>
-						{% include '/__library/objects/form-inputs/input' with {
-							label: 'Label',
-							placeholder: 'placeholder',
-							hint: 'Optional',
-							helpText: 'This is some help text',
-							error: false
-						} %}
+		{% set latestEvents = craft.entries.section('eventsItems').order('eventDate desc').limit(3) %}
+		{% set latestNews = craft.entries.section('newsItems').order('newsDate desc').limit(3) %}
+		{% set eventsIntro = craft.entries.slug('events').one().eventsIntroduction %}
 
-						{% include '/__library/objects/form-inputs/input-w-addons' with {
-							label: 'Label',
-							placeholder: 'placeholder',
-							hint: 'Optional',
-							helpText: 'This is some help text',
-							error: false,
-							buttonText: 'Send',
-							leading: 'https://',
-							trailing: '£'
+		<div class="c-home-panels lg:flex site-container--wide py-20">
+			
+			<div class="w-full lg:w-6/12 lg:px-5">
+				{% if latestEvents|length %}
+				<h2 class="c-home-panels__heading">Upcoming Events</h2>
+				<ul class="mt-7">
+					{% for entry in latestEvents %}
+						{% include '/_components/listing/event-item' with {
+							heading: entry.title,
+							venue: entry.venue,
+							date: entry.eventDate,
+							time: entry.eventTime,
+							text: null,
+							modifier: 'home'
 						} %}
-
-						{% include '/__library/objects/form-inputs/input-w-button' with {
-							label: 'Label',
-							placeholder: 'placeholder',
-							hint: 'Optional',
-							helpText: 'This is some help text',
-							error: false,
-							errorText: 'There was an error',
-							buttonText: 'Send'
-						} %}
-					</form>
+					{% endfor %}
+				</ul>
+				
+				<div class="c-home-panels__cta text-center">
+					<a href="/events" data-barba-prevent class="styled-link">View all events</a>
 				</div>
-			</div>
-		</div> #}
 
-		{# test #}
-		{# <div class="grid pt-5">
-			<div class="grid__col grid__col-1-4">
-				Col 1-4
+				{% elseif eventsIntro|length %}
+				<div class="mb-20 p-5 sm:p-10 bg-light-blue border-3 border-blue max-w-800 mx-auto text-center c-rich-text">
+					{{ eventsIntro|raw }}
+				</div>
+				{% endif %}
+
 			</div>
-			<div class="grid__col">
-				Col 2
+			
+			<div class="w-full lg:w-6/12 mt-20 lg:mt-0 lg:px-5">
+				{% if latestNews|length %}
+				<h2 class="c-home-panels__heading">Latest News</h2>
+				<ul class="mt-7">
+					{% for entry in latestNews %}
+						{% include '/_components/listing/news-item' with {
+							heading: entry.title,
+							date: entry.newsDate,
+							source: entry.newsSource,
+							text: null,
+							link: entry.newsLink,
+							modifier: 'home'
+						} %}
+					{% endfor %}
+				</ul>
+				<div class="c-home-panels__cta text-center"><a href="/news" data-barba-prevent class="styled-link">View all news</a></div>
+				{% endif %}
 			</div>
-			<div class="grid__col">
-				Col 3
-			</div>
-			<div class="grid__col">
-				Col 4
-			</div>
-			<div class="grid__col grid__col-1-12">
-				Col 1-12
-			</div>
-		</div> #}
+		</div>
+
 	{% endblock %}
 {% endembed %}
