@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: 527ddf15-9602-450e-a91c-3caf5f024dd8
-dateModified: 1592219134
+dateModified: 1592247046
 email:
   fromEmail: devs@ournameismud.co.uk
   fromName: Mudpack
@@ -1381,10 +1381,10 @@ sections:
             tabs:
               -
                 fields:
-                  dd36b441-e63e-4d7d-8600-0dfc4621cffc:
+                  72ca16d3-10c4-42f1-80be-b92d78c5d692:
                     required: false
                     sortOrder: 1
-                name: Content
+                name: SEO
                 sortOrder: 1
         handle: homepage
         hasTitleField: false
@@ -1464,6 +1464,13 @@ sections:
                     sortOrder: 2
                 name: Content
                 sortOrder: 1
+              -
+                fields:
+                  72ca16d3-10c4-42f1-80be-b92d78c5d692:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 2
         handle: contact
         hasTitleField: true
         name: Contact
@@ -1481,6 +1488,13 @@ sections:
                     sortOrder: 1
                 name: Content
                 sortOrder: 1
+              -
+                fields:
+                  72ca16d3-10c4-42f1-80be-b92d78c5d692:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 2
         handle: eventsListing
         hasTitleField: true
         name: 'Events Listing'
@@ -1488,6 +1502,16 @@ sections:
         titleFormat: ''
         titleLabel: Title
       a6e7f6b2-2060-4dd4-abec-60ae21c855c3:
+        fieldLayouts:
+          bbe438ef-0b00-4ec0-9d0a-2cf474e207d1:
+            tabs:
+              -
+                fields:
+                  72ca16d3-10c4-42f1-80be-b92d78c5d692:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 1
         handle: worksListing
         hasTitleField: true
         name: 'Works Listing'
@@ -1528,6 +1552,16 @@ sections:
         titleFormat: ''
         titleLabel: Title
       f41ed250-9101-43f4-b324-b99b028919d0:
+        fieldLayouts:
+          53432206-ab07-4a8f-b894-12bd575dc8e6:
+            tabs:
+              -
+                fields:
+                  72ca16d3-10c4-42f1-80be-b92d78c5d692:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 1
         handle: mediaListing
         hasTitleField: true
         name: 'Media Listing'
@@ -1535,6 +1569,16 @@ sections:
         titleFormat: ''
         titleLabel: Title
       fb082740-68da-4dde-af0e-9977ffdd3510:
+        fieldLayouts:
+          1bd1b3af-e305-43fb-8793-528d732b849f:
+            tabs:
+              -
+                fields:
+                  72ca16d3-10c4-42f1-80be-b92d78c5d692:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 1
         handle: newsListing
         hasTitleField: true
         name: 'News Listing'
@@ -1552,6 +1596,13 @@ sections:
                     sortOrder: 1
                 name: Content
                 sortOrder: 1
+              -
+                fields:
+                  72ca16d3-10c4-42f1-80be-b92d78c5d692:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 2
         handle: linksResources
         hasTitleField: true
         name: 'Links & Resources'
