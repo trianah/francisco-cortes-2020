@@ -433,13 +433,6 @@ h2 {
 html {
   height: 100%;
 }
-body > div:first-child > div {
-  display: flex;
-  flex-direction: column;
-}
-.l-content {
-  flex: 1 0 auto;
-}
 .c-footer {
   flex-shrink: 0;
 }
