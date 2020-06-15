@@ -1,0 +1,19 @@
+/*! ModuleConcatenation bailout: Cannot concat with /Users/triana/projects/francisco-cortes-2020/node_modules/vanilla-modal/dist/index.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! all exports used */
+
+/*! exports provided: default */
+
+/*! exports used: default */
+
+/*! no static exports found */
+
+/*!*****************************************!*\
+  !*** ./behaviours/Modal.js + 2 modules ***!
+  \*****************************************/
+
+/*!*********************************************************************************************!*\
+  !*** /Users/triana/projects/francisco-cortes-2020/node_modules/vanilla-modal/dist/index.js ***!
+  \*********************************************************************************************/
