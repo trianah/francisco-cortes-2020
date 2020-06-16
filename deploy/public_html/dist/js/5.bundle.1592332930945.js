@@ -1,0 +1,3 @@
+/*! For license information please see 5.bundle.1592332930945.js.LICENSE.txt */
+(this.webpackJsonp=this.webpackJsonp||[]).push([[5],{12:function(t,e,n){"use strict";n.r(e);var s=n(0);e.default=Object(s.withPlugins)(s.domEvents)((function({node:t,name:e,plugins:{addEvents:n}}){return n({"click [data-link]":function(t,e){t.preventDefault(),e.classList.toggle("huzzah")}}),log(this,t,e),()=>{log("i am called when the module is destroyed")}}))}}]);
+//# sourceMappingURL=5.bundle.1592332930945.js.map
