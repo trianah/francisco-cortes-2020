@@ -1,3 +1,4 @@
+import objectFitImages from "object-fit-images";
 import { loadApp, loadModule } from "@spon/core";
 import { eventBus } from "@spon/plugins";
 import barba from "@barba/core";
@@ -12,7 +13,6 @@ import views from "@/views";
 import detectTab from "@/utils/detectTab";
 import activeLinks from "@/utils/activeLinks";
 import localLinks from "@/utils/localLinks";
-import objectFitImages from "object-fit-images";
 
 objectFitImages();
 
