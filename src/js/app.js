@@ -12,12 +12,14 @@ import views from "@/views";
 import detectTab from "@/utils/detectTab";
 import activeLinks from "@/utils/activeLinks";
 import localLinks from "@/utils/localLinks";
+import objectFitImages from "object-fit-images";
 
 if (module.hot) {
   module.hot.accept();
 }
 
 webfontloader();
+objectFitImages();
 
 // load from data-behaviours
 const app = loadApp(name => import(`./behaviours/${name}`), document.body);
