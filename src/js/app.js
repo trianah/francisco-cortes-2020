@@ -5,7 +5,7 @@ import barbaCss from "@barba/css";
 import "lazysizes";
 import Header from "@/behaviours/Header";
 // import Modal from "@/behaviours/Modal";
-import SetVh from "@/behaviours/SetVh";
+// import SetVh from "@/behaviours/SetVh";
 import "@/plugins/logger";
 import webfontloader from "@/plugins/webfontloader";
 import views from "@/views";
@@ -14,12 +14,13 @@ import activeLinks from "@/utils/activeLinks";
 import localLinks from "@/utils/localLinks";
 import objectFitImages from "object-fit-images";
 
+objectFitImages();
+
 if (module.hot) {
   module.hot.accept();
 }
 
 webfontloader();
-objectFitImages();
 
 // load from data-behaviours
 const app = loadApp(name => import(`./behaviours/${name}`), document.body);
@@ -38,12 +39,12 @@ loadModule({
 //   keepAlive: true
 // });
 
-loadModule({
-  module: SetVh,
-  id: "set-vh",
-  node: document.body,
-  keepAlive: true
-});
+// loadModule({
+//   module: SetVh,
+//   id: "set-vh",
+//   node: document.body,
+//   keepAlive: true
+// });
 
 detectTab();
 
