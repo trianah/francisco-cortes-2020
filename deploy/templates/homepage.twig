@@ -14,8 +14,8 @@
 		<div class="c-home-panels lg:flex site-container--wide py-20">
 			
 			<div class="w-full lg:w-6/12 lg:px-5">
-				{% if latestEvents|length %}
 				<h2 class="c-home-panels__heading">Upcoming Events</h2>
+				{% if latestEvents|length %}
 				<ul class="mt-7">
 					{% for entry in latestEvents %}
 						{% include '/_components/listing/event-item' with {

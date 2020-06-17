@@ -10,11 +10,22 @@
 {% set entries = craft.entries.section('worksItems') %}
 {% set relatedCats = craft.categories.relatedTo(entries).orderBy('title asc') %}
 
-<div class="site-container py-20">
+{% if relatedCats %}
+    <nav class="border xl:text-center bg-light-blue py-1">
+        <div class="site-container">
+            {% for category in relatedCats %}
+                <span class="inline-block p-2"><a href="#{{ category.slug }}" class="p-2 font-sans-regular hover:opacity-50 trans trans-opacity">{{ category.title }}</a></span>
+            {% endfor %}
+        </div>
+    </nav>
+{% endif %}
+
+
+<div class="site-container pb-20">
 
     {# Loop the categories #}
     {% for category in relatedCats %}
-        <div class="l-work-cat-block no-m-first">
+        <div id="{{ category.slug }}" class="l-work-cat-block no-m-first">
             <h2 class="h2--styled mb-5">{{ category.title }}</h2>
 
             {# Get and loop through entries related to this cat #}

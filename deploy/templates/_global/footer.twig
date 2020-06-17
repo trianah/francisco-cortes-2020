@@ -18,10 +18,10 @@
 ] %}
 
 <footer class="zzzfooter font-sans-regular bg-blue text-white py-8">
-	<div class="wrapper">
+	<div class="site-container--wide">
 		<div class="flex flex-wrap justify-between items-center">
 			<a href="mailto:cortes.alvarez@gmail.com" class="hover:opacity-50 trans trans-opacity">cortes.alvarez@gmail.com</a>
-			<ul class="list-reset flex items-center">
+			<ul class="list-reset flex mt-4">
 				{% for item in socialLinks %}
 					<li><a href="{{ item.url }}" target="_blank" class="inline-block p-2 hover:opacity-50 trans trans-opacity">{{ h.symbol(item.icon) }}</a></li>
 				{% endfor %}
