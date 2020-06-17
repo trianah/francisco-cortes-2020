@@ -339,6 +339,7 @@ h2 {
 .h2--styled:before {
   @apply border-b-5 border-light-blue;
 
+  border-bottom-style: solid;
   content: "";
   position: absolute;
   display: inline-block;
