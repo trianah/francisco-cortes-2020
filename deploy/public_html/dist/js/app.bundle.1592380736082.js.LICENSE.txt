@@ -1,0 +1,125 @@
+/*!
+ * CSSPlugin 3.2.4
+ * https://greensock.com
+ *
+ * Copyright 2008-2020, GreenSock. All rights reserved.
+ * Subject to the terms at https://greensock.com/standard-license or for
+ * Club GreenSock members, the agreement issued with that membership.
+ * @author: Jack Doyle, jack@greensock.com
+*/
+
+/*!
+ * GSAP 3.2.4
+ * https://greensock.com
+ *
+ * @license Copyright 2008-2020, GreenSock. All rights reserved.
+ * Subject to the terms at https://greensock.com/standard-license or for
+ * Club GreenSock members, the agreement issued with that membership.
+ * @author: Jack Doyle, jack@greensock.com
+*/
+
+/*!
+ * headroom.js v0.11.0 - Give your page some headroom. Hide your header until you need it
+ * Copyright (c) 2020 Nick Williams - http://wicky.nillia.ms/headroom.js
+ * License: MIT
+ */
+
+/*! ./app.js */
+
+/*! @spon/core */
+
+/*! @spon/domevents */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./behaviours/Header.js (<- Module is referenced from these modules with unsupported syntax: ./behaviours lazy ^\.\/.*$ namespace object (referenced with context element)) */
+
+/*! ModuleConcatenation bailout: Cannot concat with /Users/triana/projects/francisco-cortes-2020/node_modules/@barba/core/dist/barba.umd.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with /Users/triana/projects/francisco-cortes-2020/node_modules/@barba/css/dist/barba-css.umd.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with /Users/triana/projects/francisco-cortes-2020/node_modules/@spon/core/build/index.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with /Users/triana/projects/francisco-cortes-2020/node_modules/@spon/plugins/build/index.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with /Users/triana/projects/francisco-cortes-2020/node_modules/fontfaceobserver/fontfaceobserver.standalone.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with /Users/triana/projects/francisco-cortes-2020/node_modules/headroom.js/dist/headroom.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with /Users/triana/projects/francisco-cortes-2020/node_modules/local-links/local-links.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with /Users/triana/projects/francisco-cortes-2020/node_modules/object-fit-images/dist/ofi.common-js.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! all exports used */
+
+/*! exports provided: default */
+
+/*! exports used: default */
+
+/*! exports used: device, domEvents, eventBus, withPlugins */
+
+/*! no exports provided */
+
+/*! no static exports found */
+
+/*! npm.im/object-fit-images 3.2.4 */
+
+/*!**********************!*\
+  !*** multi ./app.js ***!
+  \**********************/
+
+/*!***************************!*\
+  !*** ./plugins/logger.js ***!
+  \***************************/
+
+/*!****************************!*\
+  !*** ./app.js + 5 modules ***!
+  \****************************/
+
+/*!******************************************!*\
+  !*** ./behaviours/Header.js + 5 modules ***!
+  \******************************************/
+
+/*!***************************************************!*\
+  !*** ./behaviours lazy ^\.\/.*$ namespace object ***!
+  \***************************************************/
+
+/*!****************************************************************************************!*\
+  !*** /Users/triana/projects/francisco-cortes-2020/node_modules/lazysizes/lazysizes.js ***!
+  \****************************************************************************************/
+
+/*!*******************************************************************************************!*\
+  !*** /Users/triana/projects/francisco-cortes-2020/node_modules/@spon/core/build/index.js ***!
+  \*******************************************************************************************/
+
+/*!********************************************************************************************!*\
+  !*** /Users/triana/projects/francisco-cortes-2020/node_modules/local-links/local-links.js ***!
+  \********************************************************************************************/
+
+/*!**********************************************************************************************!*\
+  !*** /Users/triana/projects/francisco-cortes-2020/node_modules/@spon/plugins/build/index.js ***!
+  \**********************************************************************************************/
+
+/*!**********************************************************************************************!*\
+  !*** /Users/triana/projects/francisco-cortes-2020/node_modules/headroom.js/dist/headroom.js ***!
+  \**********************************************************************************************/
+
+/*!***********************************************************************************************!*\
+  !*** /Users/triana/projects/francisco-cortes-2020/node_modules/@barba/core/dist/barba.umd.js ***!
+  \***********************************************************************************************/
+
+/*!************************************************************************************************!*\
+  !*** /Users/triana/projects/francisco-cortes-2020/node_modules/@spon/domevents/build/index.js ***!
+  \************************************************************************************************/
+
+/*!**************************************************************************************************!*\
+  !*** /Users/triana/projects/francisco-cortes-2020/node_modules/@barba/css/dist/barba-css.umd.js ***!
+  \**************************************************************************************************/
+
+/*!*********************************************************************************************************!*\
+  !*** /Users/triana/projects/francisco-cortes-2020/node_modules/object-fit-images/dist/ofi.common-js.js ***!
+  \*********************************************************************************************************/
+
+/*!*****************************************************************************************************************!*\
+  !*** /Users/triana/projects/francisco-cortes-2020/node_modules/fontfaceobserver/fontfaceobserver.standalone.js ***!
+  \*****************************************************************************************************************/
