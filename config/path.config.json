@@ -3,7 +3,7 @@
 	"craft": "./deploy/",
 	"templates": "./deploy/templates/",
 	"static": "./static/",
-	"public": "./deploy/public_html/",
+	"public": "./deploy/public/",
 	"proxy": "http://local.francisco-cortes.com",
 
 	"critical": [

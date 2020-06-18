@@ -30,13 +30,7 @@
 
 /*! @spon/domevents */
 
-/*! @spon/plugins */
-
 /*! ModuleConcatenation bailout: Cannot concat with ./behaviours/Header.js (<- Module is referenced from these modules with unsupported syntax: ./behaviours lazy ^\.\/.*$ namespace object (referenced with context element)) */
-
-/*! ModuleConcatenation bailout: Cannot concat with ./behaviours/Modal.js (<- Module is referenced from these modules with unsupported syntax: ./behaviours lazy ^\.\/.*$ namespace object (referenced with context element)) */
-
-/*! ModuleConcatenation bailout: Cannot concat with ./behaviours/SetVh.js (<- Module is referenced from these modules with unsupported syntax: ./behaviours lazy ^\.\/.*$ namespace object (referenced with context element)) */
 
 /*! ModuleConcatenation bailout: Cannot concat with /Users/triana/projects/francisco-cortes-2020/node_modules/@barba/core/dist/barba.umd.js (<- Module is not an ECMAScript module) */
 
@@ -52,11 +46,9 @@
 
 /*! ModuleConcatenation bailout: Cannot concat with /Users/triana/projects/francisco-cortes-2020/node_modules/local-links/local-links.js (<- Module is not an ECMAScript module) */
 
-/*! ModuleConcatenation bailout: Cannot concat with /Users/triana/projects/francisco-cortes-2020/node_modules/vanilla-modal/dist/index.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with /Users/triana/projects/francisco-cortes-2020/node_modules/object-fit-images/dist/ofi.common-js.js (<- Module is not an ECMAScript module) */
 
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-
-/*! ModuleConcatenation bailout: Module is referenced from these modules with unsupported syntax: ./behaviours lazy ^\.\/.*$ namespace object (referenced with context element) */
 
 /*! all exports used */
 
@@ -70,6 +62,8 @@
 
 /*! no static exports found */
 
+/*! npm.im/object-fit-images 3.2.4 */
+
 /*!**********************!*\
   !*** multi ./app.js ***!
   \**********************/
@@ -81,14 +75,6 @@
 /*!****************************!*\
   !*** ./app.js + 5 modules ***!
   \****************************/
-
-/*!*****************************!*\
-  !*** ./behaviours/SetVh.js ***!
-  \*****************************/
-
-/*!*****************************************!*\
-  !*** ./behaviours/Modal.js + 2 modules ***!
-  \*****************************************/
 
 /*!******************************************!*\
   !*** ./behaviours/Header.js + 5 modules ***!
@@ -110,10 +96,6 @@
   !*** /Users/triana/projects/francisco-cortes-2020/node_modules/local-links/local-links.js ***!
   \********************************************************************************************/
 
-/*!*********************************************************************************************!*\
-  !*** /Users/triana/projects/francisco-cortes-2020/node_modules/vanilla-modal/dist/index.js ***!
-  \*********************************************************************************************/
-
 /*!**********************************************************************************************!*\
   !*** /Users/triana/projects/francisco-cortes-2020/node_modules/@spon/plugins/build/index.js ***!
   \**********************************************************************************************/
@@ -133,6 +115,10 @@
 /*!**************************************************************************************************!*\
   !*** /Users/triana/projects/francisco-cortes-2020/node_modules/@barba/css/dist/barba-css.umd.js ***!
   \**************************************************************************************************/
+
+/*!*********************************************************************************************************!*\
+  !*** /Users/triana/projects/francisco-cortes-2020/node_modules/object-fit-images/dist/ofi.common-js.js ***!
+  \*********************************************************************************************************/
 
 /*!*****************************************************************************************************************!*\
   !*** /Users/triana/projects/francisco-cortes-2020/node_modules/fontfaceobserver/fontfaceobserver.standalone.js ***!

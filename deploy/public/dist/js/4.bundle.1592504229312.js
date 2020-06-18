@@ -1,0 +1,3 @@
+/*! For license information please see 4.bundle.1592504229312.js.LICENSE.txt */
+(this.webpackJsonp=this.webpackJsonp||[]).push([[4],{11:function(e,n,t){"use strict";t.r(n);var i=t(0);n.default=Object(i.withPlugins)(i.device)((function({plugins:{device:e}}){let n=.01*window.innerHeight;function t(){n=.01*window.innerHeight,document.documentElement.style.setProperty("--vh",`${n}px`)}t(),e.resize(()=>t())}))}}]);
+//# sourceMappingURL=4.bundle.1592504229312.js.map
