@@ -25,6 +25,7 @@ const width = {
   px: "1px",
   full: "100%",
   screen: "100vw",
+  icon: "20px",
   "1/11": "9.090909091%",
   "5/11": "45.45454545%",
   "6/11": "54.54545455%",
@@ -69,7 +70,8 @@ const minWidth = {
 const maxWidth = {
   ...maxSizes(1, 10, 2),
   wrapper: "1280px",
-  full: "100%"
+  full: "100%",
+  "album-image": "250px"
 };
 
 /*

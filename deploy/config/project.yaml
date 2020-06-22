@@ -1,4 +1,15 @@
 categoryGroups:
+  02f924c8-53a9-4202-8fc2-f41296d754c3:
+    handle: albumsCategories
+    name: 'Albums Categories'
+    siteSettings:
+      05d55c3b-30bf-4626-880d-f529f19f1b9c:
+        hasUrls: false
+        template: null
+        uriFormat: null
+    structure:
+      maxLevels: null
+      uid: 58fa88d2-c995-4ff3-ae2f-ca8ea7f25fb9
   e4cbabbe-d706-4cb8-b68f-6ae5204866f5:
     handle: worksCategories
     name: 'Works Categories'
@@ -10,12 +21,18 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: 527ddf15-9602-450e-a91c-3caf5f024dd8
-dateModified: 1592247046
+dateModified: 1592843938
 email:
-  fromEmail: devs@ournameismud.co.uk
-  fromName: Mudpack
+  fromEmail: cortes.alvarez@gmail.com
+  fromName: 'Francisco Cortes'
+  replyToEmail: cortes.alvarez@gmail.com
+  template: null
+  transportSettings:
+    command: ''
   transportType: craft\mail\transportadapters\Sendmail
 fieldGroups:
+  2e22b1c8-1168-434d-911e-0bf94f39df23:
+    name: Globals
   31d0f75b-a57d-42f9-857f-a565166306b3:
     name: News
   4463d226-a8f1-42b7-a903-b2b23fe9d33f:
@@ -26,14 +43,46 @@ fieldGroups:
     name: Works
   afe64637-a00f-4a3a-aeea-64fa8960145b:
     name: Bio
+  e0e0b717-cb62-49fe-904a-e36126bee74b:
+    name: Albums
   e9ec2286-c557-49b1-aca5-af1f8fc01b6f:
     name: Contact
   ff85486a-7911-4de0-a7b7-d52b56e93f24:
     name: SEO
 fields:
+  01338975-f96d-407e-adc5-207244caac0b:
+    contentColumnType: string
+    fieldGroup: e0e0b717-cb62-49fe-904a-e36126bee74b
+    handle: albumImage
+    instructions: ''
+    name: 'Album Image'
+    searchable: true
+    settings:
+      allowSelfRelations: ''
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:22c6b34c-7264-4c51-8ca5-1be301d6b6c4'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:22c6b34c-7264-4c51-8ca5-1be301d6b6c4'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
   11ee3176-0617-48a9-8448-510f231b1540:
     contentColumnType: datetime
-    fieldGroup: 80ccde80-89c4-4e0f-b5cc-28af35fea485
+    fieldGroup: 6c286577-1b0a-48fc-8ada-b44c2450248b
     handle: date
     instructions: '(only shows year)'
     name: Date
@@ -225,6 +274,21 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Matrix
+  62f17231-ae35-402f-8a21-28c296f4648f:
+    contentColumnType: string
+    fieldGroup: e0e0b717-cb62-49fe-904a-e36126bee74b
+    handle: links
+    instructions: ''
+    name: Links
+    searchable: true
+    settings:
+      contentTable: '{{%matrixcontent_links}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
   6860cf05-c9d5-4b03-8af1-5dbfd95d7500:
     contentColumnType: text
     fieldGroup: afe64637-a00f-4a3a-aeea-64fa8960145b
@@ -382,6 +446,36 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: ether\seo\fields\SeoField
+  7abf3f60-47d2-4c62-a203-aeee8a9fadf0:
+    contentColumnType: string
+    fieldGroup: 80ccde80-89c4-4e0f-b5cc-28af35fea485
+    handle: scorePdf
+    instructions: ''
+    name: 'Score PDF'
+    searchable: true
+    settings:
+      allowSelfRelations: ''
+      allowedKinds:
+        - pdf
+      defaultUploadLocationSource: 'volume:22c6b34c-7264-4c51-8ca5-1be301d6b6c4'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:dab00df4-b568-4dc3-8052-6cf6a4560e95'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
   7ac6c40f-ffd2-41e4-9f62-cf0998b885f8:
     contentColumnType: datetime
     fieldGroup: 31d0f75b-a57d-42f9-857f-a565166306b3
@@ -541,6 +635,24 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: typedlinkfield\fields\LinkField
+  9ec93251-3c4d-42f5-a2e9-fbb717684f23:
+    contentColumnType: text
+    fieldGroup: e0e0b717-cb62-49fe-904a-e36126bee74b
+    handle: artist
+    instructions: ''
+    name: Artist
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   a38506dd-b177-4f4b-8d79-13208a9d5666:
     contentColumnType: text
     fieldGroup: 4463d226-a8f1-42b7-a903-b2b23fe9d33f
@@ -588,6 +700,24 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Date
+  ba3da678-b55f-447e-8e86-0dd3b53610df:
+    contentColumnType: text
+    fieldGroup: e0e0b717-cb62-49fe-904a-e36126bee74b
+    handle: albumInfo
+    instructions: ''
+    name: 'Album Info'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '2'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   c2e08f4a-9c3f-4844-9fe6-d3889685ab3c:
     contentColumnType: text
     fieldGroup: afe64637-a00f-4a3a-aeea-64fa8960145b
@@ -734,29 +864,29 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-globalSets:
-  523210a1-8380-4cf2-9516-02806960b3e6:
-    handle: header
-    name: Header
-  d0e6f379-cde5-4bc3-9399-fe59c4b4c7c6:
-    fieldLayouts:
-      f0920547-731a-4e44-81f8-0d1bdb7ad422:
-        tabs:
-          -
-            fields:
-              dd36b441-e63e-4d7d-8600-0dfc4621cffc:
-                required: false
-                sortOrder: 1
-            name: Images
-            sortOrder: 1
-          -
-            name: 'Contact Details'
-            sortOrder: 2
-    handle: fallbacks
-    name: Fallbacks
-  fbccdc92-f59b-4fae-9d57-8229eaf71476:
-    handle: footer
-    name: Footer
+  fc7f550d-4311-4f45-939a-0c81f854d5b8:
+    contentColumnType: string
+    fieldGroup: e0e0b717-cb62-49fe-904a-e36126bee74b
+    handle: albumCategory
+    instructions: ''
+    name: 'Album Category'
+    searchable: true
+    settings:
+      allowLimit: false
+      allowMultipleSources: false
+      allowSelfRelations: ''
+      branchLimit: '1'
+      limit: null
+      localizeRelations: false
+      selectionLabel: ''
+      source: 'group:02f924c8-53a9-4202-8fc2-f41296d754c3'
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: ''
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Categories
 matrixBlockTypes:
   136b2c25-00e6-438d-9331-cb0176f748a9:
     field: 964681ab-fbfe-4568-8969-fa446645e985
@@ -963,6 +1093,131 @@ matrixBlockTypes:
     handle: video
     name: Video
     sortOrder: 4
+  3c6d8341-f526-4680-be83-c0458a338875:
+    field: 62f17231-ae35-402f-8a21-28c296f4648f
+    fieldLayouts:
+      c021f33b-20a9-4f5f-a854-bd408aeaa5de:
+        tabs:
+          -
+            fields:
+              88f617b2-1b71-4b97-8566-1d5b7e90e5f9:
+                required: false
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    fields:
+      88f617b2-1b71-4b97-8566-1d5b7e90e5f9:
+        contentColumnType: text
+        fieldGroup: null
+        handle: albumLink
+        instructions: ''
+        name: link
+        searchable: true
+        settings:
+          allowCustomText: '1'
+          allowTarget: '1'
+          allowedLinkNames:
+            9: url
+          autoNoReferrer: '1'
+          defaultLinkName: url
+          defaultText: 'view album'
+          enableAriaLabel: ''
+          enableTitle: ''
+          typeSettings:
+            __assoc__:
+              -
+                - asset
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - category
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - entry
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - site
+                -
+                  __assoc__:
+                    -
+                      - sites
+                      - '*'
+              -
+                - user
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - custom
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - email
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - tel
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - url
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: typedlinkfield\fields\LinkField
+    handle: link
+    name: link
+    sortOrder: 1
   4ed60ca9-aa47-4a0a-9191-30a2e63558a6:
     field: a5fe0bba-97da-450b-8835-1f987e226a30
     fieldLayouts:
@@ -1319,9 +1574,51 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 3.1.1
+    settings:
+      description: ''
+      facebookAppId: ''
+      metaTemplate: ''
+      removeAlternateUrls: ''
+      robots:
+        - ''
+        - ''
+        - ''
+        - ''
+        - ''
+        - ''
+      robotsTxt: "{# Sitemap URL #}\r\nSitemap: {{ url(seo.sitemapName ~ '.xml') }}\r\n\r\n{# Disallows #}\r\n{% if craft.app.config.env != 'production' %}\r\n\r\n{# Disallow access to everything when NOT in production #}\r\nUser-agent: *\r\nDisallow: /\r\n\r\n{% else %}\r\n\r\n{# Disallow access to cpresources/ when live #}\r\nUser-agent: *\r\nDisallow: /cpresources/\r\n\r\n{% endif %}"
+      sitemapLimit: '1000'
+      sitemapName: sitemap
+      socialImage:
+        - '407'
+      title:
+        -
+          __assoc__:
+            -
+              - key
+              - '1'
+            -
+              - locked
+              - '0'
+            -
+              - template
+              - '{title}'
+        -
+          __assoc__:
+            -
+              - key
+              - '2'
+            -
+              - locked
+              - '1'
+            -
+              - template
+              - ' - {{ siteName }}'
+      titleSuffix: null
+      twitterHandle: ''
   splash:
     edition: standard
-    enabled: true
+    enabled: false
     schemaVersion: 3.0.0
     settings:
       authorField: ''
@@ -1364,6 +1661,51 @@ sections:
         titleLabel: Title
     handle: newsItems
     name: 'News Items'
+    propagationMethod: all
+    siteSettings:
+      05d55c3b-30bf-4626-880d-f529f19f1b9c:
+        enabledByDefault: true
+        hasUrls: false
+        template: null
+        uriFormat: ''
+    type: channel
+  51b7ea91-adbe-4ef5-8360-963b352274d3:
+    enableVersioning: true
+    entryTypes:
+      3fe828d3-02cf-493c-a884-cdd64fdd8ff1:
+        fieldLayouts:
+          b85db78e-a8b8-44fe-98b5-4c5ace296aa5:
+            tabs:
+              -
+                fields:
+                  01338975-f96d-407e-adc5-207244caac0b:
+                    required: false
+                    sortOrder: 6
+                  11ee3176-0617-48a9-8448-510f231b1540:
+                    required: false
+                    sortOrder: 3
+                  62f17231-ae35-402f-8a21-28c296f4648f:
+                    required: false
+                    sortOrder: 5
+                  9ec93251-3c4d-42f5-a2e9-fbb717684f23:
+                    required: false
+                    sortOrder: 2
+                  ba3da678-b55f-447e-8e86-0dd3b53610df:
+                    required: false
+                    sortOrder: 4
+                  fc7f550d-4311-4f45-939a-0c81f854d5b8:
+                    required: true
+                    sortOrder: 1
+                name: Content
+                sortOrder: 1
+        handle: albumsItems
+        hasTitleField: true
+        name: 'Albums Items'
+        sortOrder: 1
+        titleFormat: ''
+        titleLabel: Title
+    handle: albumsItems
+    name: 'Albums Items'
     propagationMethod: all
     siteSettings:
       05d55c3b-30bf-4626-880d-f529f19f1b9c:
@@ -1420,6 +1762,9 @@ sections:
                   4bfeb49d-5ae5-4074-828b-1f80aa3d7137:
                     required: false
                     sortOrder: 6
+                  7abf3f60-47d2-4c62-a203-aeee8a9fadf0:
+                    required: false
+                    sortOrder: 7
                   80bed2d6-b2f1-49cf-bdfc-49951496ee37:
                     required: false
                     sortOrder: 2
@@ -1499,6 +1844,23 @@ sections:
         hasTitleField: true
         name: 'Events Listing'
         sortOrder: 3
+        titleFormat: ''
+        titleLabel: Title
+      a049d9c0-0856-4218-8ec0-113003312569:
+        fieldLayouts:
+          7b757147-bcf4-4118-b72e-7ada6dbfd5fc:
+            tabs:
+              -
+                fields:
+                  72ca16d3-10c4-42f1-80be-b92d78c5d692:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 1
+        handle: albumsListing
+        hasTitleField: true
+        name: 'Albums Listing'
+        sortOrder: 8
         titleFormat: ''
         titleLabel: Title
       a6e7f6b2-2060-4dd4-abec-60ae21c855c3:
@@ -1679,11 +2041,7 @@ system:
   live: true
   name: $SITE_NAME
   schemaVersion: 3.4.10
-  timeZone: America/Los_Angeles
-tagGroups:
-  73716440-7a32-4b76-9b3b-31fc6e874ac1:
-    handle: instruments
-    name: Instruments
+  timeZone: America/Mexico_City
 users:
   allowPublicRegistration: false
   defaultGroup: null
@@ -1718,3 +2076,12 @@ volumes:
     sortOrder: 2
     type: craft\volumes\Local
     url: '@web/resources/media'
+  dab00df4-b568-4dc3-8052-6cf6a4560e95:
+    handle: scores
+    hasUrls: true
+    name: Scores
+    settings:
+      path: '@webroot/resources/scores'
+    sortOrder: 6
+    type: craft\volumes\Local
+    url: '@web/resources/scores'

@@ -1,0 +1,52 @@
+{% import '/_macros/helpers' as h %}
+
+{% set heading = heading|default('') %}
+{% set artist = artist|default('') %}
+{% set info = info|default('') %}
+{% set date = date|default(null) %}
+{% set image = image|default(null) %}
+{% set links = links|default(null) %}
+
+<div class="c-work-item zzzborder md:flex mb-16">
+
+    {% if image %}
+        {% set image = getImage(image, [
+		{ width: 800 },
+		{ width: 400 }
+	], {ratio: 1}) %}
+        <div class="w-full max-w-album-image zzzborder md:mr-8 mb-6 md:mb-0">
+            <picture class="c-listing-item__img-cont relative w-full">
+                {% if image.webp %}
+                    <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="{{ image.webpSrcset }}" data-sizes="100vw" type="image/webp">
+                {% endif %}
+
+                <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="{{ image.srcset }}" data-sizes="100vw" type="image/jpeg">
+
+                <img class="c-album-img object-cover lazyload" src="{{ image.placeholder }}" data-src="{{ image.src }}" alt="{{ image.alt }}" width="{{ image.width }}" height="{{ image.height }}">
+
+                <noscript>
+                    <img class="c-album-img" src="{{ image.src }}" alt="" width="{{ image.width }}" height="{{ image.height }}">
+                </noscript>
+            </picture>
+        </div>
+    {% endif %}
+
+    <div class="">
+        <h3 class="c-work-item__title mb-0">{{ heading }}</h3>
+        <p class="font-sans-regular font-600 mt-2 text-meta-works text-grey tracking-wide">
+            {% if artist|length %}{{ artist }}{% endif %}<br>
+            {% if date %}{{ date|date('Y') }}{% endif %}
+        </p>
+        {% if info %}
+            <p class="c-work-item__desc mt-3 mb-0">
+                {{ info|nl2br }}
+            </p>
+        {% endif %}
+
+        {% for link in links %}    
+            {% if link.albumLink.url|length %}
+                <a href="{{ link.albumLink.url }}" {{ link.albumLink.getLinkAttributes() }} class="c-news__cta styled-link mt-2">{{ link.albumLink.text }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

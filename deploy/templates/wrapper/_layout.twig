@@ -8,7 +8,7 @@
 {% set gaTrackingId = getenv('GA_TRACKING_ID') %} #}
 <!DOCTYPE html>
 <!-- build:cms-->
-{% set stamp = ".1592504229312" %}
+{% set stamp = "" %}
 <!-- endbuild-->
 <html lang="en-gb" dir="ltr" class="no-js">
   <head>
@@ -87,6 +87,11 @@
 				text: 'Media',
 				url: siteUrl ~ 'media',
 				slug: 'media'
+			},
+			{
+				text: 'Albums',
+				url: siteUrl ~ 'albums',
+				slug: 'albums'
 			},
 			{
 				text: 'News',

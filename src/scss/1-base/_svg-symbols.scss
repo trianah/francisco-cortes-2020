@@ -34,6 +34,12 @@
     padding-bottom: 44.44444444444444%;
   }
 }
+.icon--score {
+  width: rem(360px);
+  &:after {
+    padding-bottom: 130.55555555555557%;
+  }
+}
 .icon--soundcloud {
   width: rem(37px);
   &:after {
@@ -54,6 +60,10 @@ $icon--facebook-ratio: 1.9230769230769231;
 $icon--logo-width: 162px;
 $icon--logo-height: 72px;
 $icon--logo-ratio: 0.4444444444444444;
+
+$icon--score-width: 360px;
+$icon--score-height: 470px;
+$icon--score-ratio: 1.3055555555555556;
 
 $icon--soundcloud-width: 37px;
 $icon--soundcloud-height: 18px;

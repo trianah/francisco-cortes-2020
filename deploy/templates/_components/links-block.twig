@@ -8,7 +8,10 @@
             {% if linksBlock.links|length %}
                 <ul>
                     {% for row in linksBlock.links %}
-                        <li><a href="{{ row.link }}" target="_blank">{{ row.name }}</a>{% if row.description %}: {{ row.description }}{% endif %}</li>
+                        <li>
+                            <a href="{{ row.link }}" target="_blank" class="inline-block">{{ row.name }}</a>
+                            {% if row.description %}<span class="mt-2 block">{{ row.description }}</span>{% endif %}
+                        </li>
                     {% endfor %}
                     {# <li><a href="http://www.music.indiana.edu/department/composition/IUCStyleGuide.shtml">IU Composition Department Music Notation Style Guide:</a> a good reference for any score editing doubts</li>
                     <li><a href="http://www.music.indiana.edu/department/composition/isfee/">Instrumentation Studies for Eyes and Ears:</a> Don Freund´s interactive score/video/commentary instrumentation site. User name: isfee; password: donfreund.</li> #}

@@ -11,7 +11,7 @@
 
 {% set relatedCats = craft.categories.relatedTo(entries).orderBy('title asc') %}
 
-<div class="site-container py-20">
+<div class="site-container pb-20">
 
     {# Loop the categories #}
     {% for category in relatedCats %}
@@ -19,7 +19,7 @@
             <h2 class="h2--styled mb-5">{{ category.title }}</h2>
 
             {# Get and loop through entries related to this cat #}
-            {% set relatedEntries = entries.relatedTo(category).orderBy('date asc') %}
+            {% set relatedEntries = entries.relatedTo(category).orderBy('date desc') %}
             {% for entry in relatedEntries %}
                 
                 {% include '/_components/listing/media-item' with {

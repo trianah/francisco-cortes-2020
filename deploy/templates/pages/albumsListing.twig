@@ -7,10 +7,10 @@
 
 
 {# WORKS LISTING #}
-{% set entries = craft.entries.section('worksItems') %}
+{% set entries = craft.entries.section('albumsItems') %}
 {% set relatedCats = craft.categories.relatedTo(entries).orderBy('title asc') %}
 
-{% if relatedCats %}
+{# {% if relatedCats %}
     <nav class="border xl:text-center bg-light-blue py-1">
         <div class="site-container">
             {% for category in relatedCats %}
@@ -18,8 +18,7 @@
             {% endfor %}
         </div>
     </nav>
-{% endif %}
-
+{% endif %} #}
 
 <div class="site-container pb-20">
 
@@ -32,16 +31,13 @@
             {% set relatedEntries = craft.entries.relatedTo(category).orderBy('date desc') %}
             {% for entry in relatedEntries %}
                 
-                {% include '/_components/listing/work-item' with {
+                {% include '/_components/listing/album-item' with {
                     heading: entry.title ?? '',
-                    slug: entry.slug ?? '',
-                    category: entry.category|length ? entry.category[0] : null,
-                    instruments: entry.instruments ?? '',
-                    duration: entry.duration ?? '',
+                    artist: entry.artist ?? '',
                     date: entry.date|length ? entry.date : null,
-                    revDate: entry.revDate|length ? entry.revDate : null,
-                    asset: entry.media|length ? entry.media[0] : null,
-                    file: entry.scorePdf|length ? entry.scorePdf[0] : null
+                    info: entry.albumInfo ?? '',
+                    image: entry.albumImage|length ? entry.albumImage[0] : null,
+                    links: entry.links|length ? entry.links : null
                 } %}
 
             {% endfor %}

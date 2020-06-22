@@ -1,3 +1,5 @@
+{# {% import '/_macros/helpers' as h %} #}
+
 {% set heading = heading|default('') %}
 {% set slug = slug|default('') %}
 {% set category = category|default(null) %}
@@ -6,6 +8,7 @@
 {% set date = date|default(null) %}
 {% set revDate = revDate|default(null) %}
 {% set asset = asset|default(null) %}
+{% set file = file|default(null) %}
 
 <div class="c-work-item">
     <h3 class="c-work-item__title mb-0">{{ heading }}</h3>
@@ -27,5 +30,12 @@
             </div>
         </div> #}
         <a data-barba-prevent href="/media#{{ slug }}" class="c-news__cta styled-link mt-2">media resource</a>
+    {% endif %}
+
+    {% if file %}
+        {# <span class="inline-flex items-end">
+            <span class="block w-icon">{{ h.symbol('score') }}</span> #}
+            <a href="{{ file.url }}" target="_blank" class="c-news__cta styled-link mt-2 inline-block">perusal score</a>
+        {# </span> #}
     {% endif %}
 </div>
